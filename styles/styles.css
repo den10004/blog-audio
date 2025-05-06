@@ -1,15 +1,130 @@
 @import "./header.css";
+@import "./banner.css";
 @import "./normalize.css";
 @import "../vendor/fonts.css";
 
 body {
   margin: 0 auto;
   padding: 0;
-  max-width: 1920px;
+  max-width: 1280px;
   background: white;
 }
 
 * {
   margin: 0;
   padding: 0;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+  line-height: 0;
+  cursor: pointer;
+}
+
+li {
+  list-style-type: none;
+}
+
+
+button {
+  cursor: pointer;
+}
+
+:root {
+  --color-black1C: #1C1C1C;
+  --color-black2C: #2C2C2C;
+  --color-gray: #BEBEBE;
+  --color-grayF8: #F8F8F8;
+  --color-white: #FFFFFF;
+  --color-blue: #0055CC;
+  --color-sky-blue: #A7CAFF;
+}
+
+.container {
+  max-width: 1232px;
+  padding: 0 16px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+
+.headline-h1 {
+  font-family: "Roboto", "Arial", sans-serif;
+  font-size: 54px;
+  font-weight: 500;
+  line-height: 100%;
+}
+
+.headline-h2 {
+  font-family: "Roboto", "Arial", sans-serif;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 114%;
+}
+
+.headline-h3-bold {
+  font-family: "Roboto", "Arial", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 100%;
+}
+
+.headline-h3 {
+  font-family: "Roboto", "Arial", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 100%;
+}
+
+.headline {
+  font-family: "Roboto", "Arial", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 140%;
+}
+
+.headline14 {
+  font-family: "Roboto", "Arial", sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 140%;
+}
+
+.headline-small {
+  font-family: "Roboto", "Arial", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 140%;
+}
+
+@media screen and (max-width: 767px) {
+  .headline-h1 {
+    font-size: 48px;
+    font-weight: 600;
+  }
+
+  .headline-h2 {
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 100%;
+  }
+
+  .headline-h3-bold {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 140%;
+  }
+
+  .headline-h3 {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 140%;
+  }
+
+  .headline {
+    font-family: "Roboto", "Arial", sans-serif;
+    font-size: 16px;
+  }
+
 }
