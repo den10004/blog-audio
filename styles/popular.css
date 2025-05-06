@@ -26,27 +26,89 @@
     display: flex;
     align-items: center;
     color: var(--color-black2C);
+    background-color: var(--color-grayF4);
     padding-right: 10px;
     border-radius: 20px;
     height: 32px
 }
 
+.popular__search {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+}
 
 
+.popular__search>button {
+    display: flex;
+    background: none;
+    align-items: center;
+}
+
+
+.popular__search>button>div {
+    margin-right: 10px;
+}
+
+
+.strip {
+    background-color: var(--color-black1C);
+    height: 2px;
+}
+
+.strip-1 {
+    width: 5px;
+}
+
+.strip-2 {
+    width: 10px;
+    margin: 5px 0;
+}
+
+.strip-3 {
+    width: 16px;
+}
+
+
+.popular__search {
+    margin-top: 30px;
+    display: flex;
+}
+
+.search-input {
+    width: 300px;
+    height: 30px;
+    padding-left: 23px;
+    border: none;
+    background-image: url('./../images/lupe.svg');
+    background-repeat: no-repeat;
+    background-position: 0px center;
+    background-size: 16px;
+    border-bottom: 1px solid #d5d1d1;
+}
+
+.search-input::placeholder {
+    color: var(--color-black1C);
+    opacity: 1;
+}
 
 @media screen and (max-width: 767px) {
-
-    /* Свёрнутое состояние - 2 строки */
     .popular__sort.collapsed {
         max-height: calc(2 * (1em + 16px + 3px * 2));
         overflow: hidden;
-        /* Высота 2 строк */
     }
 
-    /* Развёрнутое состояние */
     .links-list.expanded {
         max-height: 100%;
     }
 
+    .popular__search {
+        gap: 15px;
+    }
+}
 
+@media screen and (max-width: 375px) {
+    .search-input {
+        width: 270px;
+    }
 }
