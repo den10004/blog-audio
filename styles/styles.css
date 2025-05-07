@@ -3,6 +3,8 @@
 @import "./popular.css";
 @import "./bloglist.css";
 @import "./label.css";
+@import "./interes.css";
+@import "./brands.css";
 @import "./normalize.css";
 @import "../vendor/fonts.css";
 
@@ -69,56 +71,56 @@ button {
 }
 
 
-.headline-h1 {
+.text-h1 {
   font-family: "Roboto", "Arial", sans-serif;
   font-size: 54px;
   font-weight: 500;
   line-height: 100%;
 }
 
-.headline-h2 {
+.text-h2 {
   font-family: "Roboto", "Arial", sans-serif;
   font-size: 32px;
   font-weight: 500;
   line-height: 114%;
 }
 
-.headline-h3-bold {
+.text-h3-bold {
   font-family: "Roboto", "Arial", sans-serif;
   font-size: 24px;
   font-weight: 600;
   line-height: 100%;
 }
 
-.headline-h3 {
+.text-h3 {
   font-family: "Roboto", "Arial", sans-serif;
   font-size: 24px;
   font-weight: 400;
   line-height: 100%;
 }
 
-.headline {
+.text {
   font-family: "Roboto", "Arial", sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 140%;
 }
 
-.headline14 {
+.text14 {
   font-family: "Roboto", "Arial", sans-serif;
   font-size: 10px;
   font-weight: 400;
   line-height: 140%;
 }
 
-.headline16 {
+.text16 {
   font-family: "Roboto", "Arial", sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 140%;
 }
 
-.headline-small {
+.text-small {
   font-family: "Roboto", "Arial", sans-serif;
   font-size: 14px;
   font-weight: 400;
@@ -126,30 +128,30 @@ button {
 }
 
 @media screen and (max-width: 767px) {
-  .headline-h1 {
+  .text-h1 {
     font-size: 48px;
     font-weight: 600;
   }
 
-  .headline-h2 {
+  .text-h2 {
     font-size: 22px;
     font-weight: 500;
     line-height: 100%;
   }
 
-  .headline-h3-bold {
+  .text-h3-bold {
     font-size: 16px;
     font-weight: 400;
     line-height: 140%;
   }
 
-  .headline-h3 {
+  .text-h3 {
     font-size: 16px;
     font-weight: 400;
     line-height: 140%;
   }
 
-  .headline {
+  .text {
     font-family: "Roboto", "Arial", sans-serif;
     font-size: 16px;
   }

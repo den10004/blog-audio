@@ -1,0 +1,18 @@
+.interes {
+    margin-top: 50px;
+}
+
+.interes__card {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+@media screen and (max-width:1000px) {
+    .interes__card {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 22px;
+    }
+}
