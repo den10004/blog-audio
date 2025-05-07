@@ -96,7 +96,7 @@
 
 @media screen and (max-width: 767px) {
     .popular__sort.collapsed {
-        max-height: calc(2 * (1em + 16px + 3px * 2));
+        max-height: calc(2 * (1em + 16px + 2px * 2));
         overflow: hidden;
     }
 

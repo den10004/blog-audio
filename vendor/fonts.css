@@ -19,3 +19,10 @@
   font-weight: 400;
   font-style: normal;
 }*/
+
+@font-face {
+  font-family: 'SFProText';
+  src: url(fonts/SFProText-Regular.ttf);
+  font-weight: 500;
+  font-style: normal;
+}

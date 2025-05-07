@@ -19,8 +19,7 @@
     display: flex;
 }
 
-.card__container-wide>img {
-    width: 50%;
+.card__container-wide>div>img {
     height: auto;
     border-radius: 20px;
     aspect-ratio: 568/371;
@@ -64,7 +63,9 @@
     grid-column: 1 / 4;
 }
 
-.card__container-small>img {
+
+
+.card__container-small>div>img {
     width: 100%;
     height: auto;
     border-radius: 20px;
@@ -97,10 +98,10 @@
 #load-more {
     margin: 20px auto;
     padding: 10px 20px;
-    background: #4CAF50;
-    color: white;
+    background: var(--color-grayF8);
+    color: var(--color-black1C);
+    border-radius: 50px;
     border: none;
-    border-radius: 4px;
     cursor: pointer;
 }
 
@@ -138,7 +139,7 @@
         flex-direction: column;
     }
 
-    .card__container-wide>img {
+    .card__container-wide>div>img {
         width: 100%;
     }
 

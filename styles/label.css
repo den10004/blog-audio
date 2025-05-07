@@ -1,0 +1,63 @@
+.labelblock-big {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+}
+
+.label {
+    padding: 5px 10px;
+    border-radius: 100px;
+    margin-right: 10px;
+    font-family: "SFProText";
+    font-weight: 400;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+}
+
+
+.labelblock-min {
+    position: absolute;
+    bottom: 10px;
+    right: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end
+}
+
+.labelblock-min>div {
+    margin-bottom: 5px;
+}
+
+.label>svg {
+    margin-right: 5px;
+}
+
+.comparison-label {
+    background: var(--color-green);
+    color: var(--color-white);
+
+}
+
+.article-label {
+    background: var(--color-blue);
+    color: var(--color-white);
+}
+
+.article-review {
+    background: var(--color-sky-blue);
+    color: var(--color-white);
+}
+
+.show-label {
+    background: var(--color-grayF4);
+    color: var(--color-black1C);
+}
+
+.show-label-min {
+    backdrop-filter: blur(6px);
+    color: var(--color-white);
+    background: #FFFFFF4D;
+
+}

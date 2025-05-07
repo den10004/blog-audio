@@ -2,6 +2,7 @@
 @import "./hero.css";
 @import "./popular.css";
 @import "./blog.css";
+@import "./label.css";
 @import "./normalize.css";
 @import "../vendor/fonts.css";
 
@@ -56,6 +57,8 @@ button {
   --color-white: #FFFFFF;
   --color-blue: #0055CC;
   --color-sky-blue: #A7CAFF;
+  --color-green: #2CAE35;
+
 }
 
 .container {
