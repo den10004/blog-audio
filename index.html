@@ -18,6 +18,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   </head>
   <body>
     <header class="header">
@@ -232,7 +233,7 @@
 
     <section class="blog">
       <div class="cards-container container"></div>
-      <button id="load-more" class="text" style="display: none">
+      <button id="load-more" class="text showbtn" style="display: none">
         Посмотреть все
       </button>
     </section>
@@ -439,9 +440,84 @@
         </div>
       </div>
     </section>
+
+    <section class="brands">
+      <div class="container">
+        <div style="display: flex; justify-content: space-between; width: 100%">
+          <h3 class="text-h3-bold">Бренды</h3>
+
+          <div
+            style="width: 90px; display: flex; justify-content: space-between"
+          >
+            <div class="brand-button-next">
+              <svg
+                width="15"
+                height="10"
+                viewBox="0 0 15 10"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0.575736 5.42426C0.341421 5.18995 0.341421 4.81005 0.575736 4.57574L4.39411 0.757359C4.62843 0.523045 5.00833 0.523045 5.24264 0.757359C5.47696 0.991674 5.47696 1.37157 5.24264 1.60589L1.84853 5L5.24264 8.39411C5.47696 8.62843 5.47696 9.00833 5.24264 9.24264C5.00833 9.47696 4.62843 9.47696 4.39411 9.24264L0.575736 5.42426ZM15 5.6H1V4.4H15V5.6Z"
+                  fill="#0055CC"
+                />
+              </svg>
+            </div>
+            <div class="brand-button-prev">
+              <svg
+                width="15"
+                height="10"
+                viewBox="0 0 15 10"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M14.4243 5.42426C14.6586 5.18995 14.6586 4.81005 14.4243 4.57574L10.6059 0.757359C10.3716 0.523045 9.99167 0.523045 9.75736 0.757359C9.52304 0.991674 9.52304 1.37157 9.75736 1.60589L13.1515 5L9.75736 8.39411C9.52304 8.62843 9.52304 9.00833 9.75736 9.24264C9.99167 9.47696 10.3716 9.47696 10.6059 9.24264L14.4243 5.42426ZM0 5.6H14V4.4H0V5.6Z"
+                  fill="#0055CC"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="brands__block">
+          <div class="swiper brandSlider">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide brand-style">
+                <img src="./images/accuphase.png" alt="accuphase" />
+              </div>
+              <div class="swiper-slide brand-style">
+                <img src="./images/akai.png" alt="akai" />
+              </div>
+              <div class="swiper-slide brand-style">
+                <img src="./images/alesis.png" alt="alesis" />
+              </div>
+              <div class="swiper-slide brand-style">
+                <img src="./images/ar.png" alt="ar" />
+              </div>
+              <div class="swiper-slide brand-style">
+                <img src="./images/aavik.png" alt="aavik" />
+              </div>
+              <div class="swiper-slide brand-style">
+                <img src="./images/as.png" alt="adam studio" />
+              </div>
+              <div class="swiper-slide brand-style">
+                <img src="./images/accuphase.png" alt="accuphase" />
+              </div>
+              <div class="swiper-slide brand-style">
+                <img src="./images/ar.png" alt="ar" />
+              </div>
+            </div>
+          </div>
+
+          <button id="showbtn" class="text showbtn">Посмотреть все</button>
+        </div>
+      </div>
+    </section>
   </body>
   <script src="./js/popular.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="./js/slider-brands.js"></script>
 </html>
 
 <script>

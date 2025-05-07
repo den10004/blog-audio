@@ -94,15 +94,8 @@
     margin-top: 10px;
 }
 
-
 #load-more {
     margin: 20px auto;
-    padding: 10px 20px;
-    background: var(--color-grayF8);
-    color: var(--color-black1C);
-    border-radius: 50px;
-    border: none;
-    cursor: pointer;
 }
 
 /*

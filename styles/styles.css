@@ -54,6 +54,7 @@ button {
   --color-gray: #BEBEBE;
   --color-grayF8: #F8F8F8;
   --color-grayF4: #F4F4F4;
+  --color-grayF5: #F5F5F5;
   --color-grayFA: #FAFAFA;
   --color-gray56: #565656;
   --color-white: #FFFFFF;
@@ -125,6 +126,16 @@ button {
   font-size: 14px;
   font-weight: 400;
   line-height: 140%;
+}
+
+.showbtn {
+  margin: 20px auto;
+  padding: 10px 20px;
+  background: var(--color-grayF8);
+  color: var(--color-black1C);
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 767px) {
