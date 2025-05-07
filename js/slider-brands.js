@@ -22,5 +22,8 @@ var swiper = new Swiper(".brandSlider", {
     1000: {
       slidesPerView: 5,
     },
+    1280: {
+      slidesPerView: 6,
+    },
   },
 });

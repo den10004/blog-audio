@@ -482,7 +482,7 @@
 
         <div class="brands__block">
           <div class="swiper brandSlider">
-            <div class="swiper-wrapper">
+            <div class="swiper-wrapper" id="brands-container">
               <div class="swiper-slide brand-style">
                 <img src="./images/accuphase.png" alt="accuphase" />
               </div>
@@ -922,5 +922,59 @@
     setTimeout(() => {
       loadMoreBtn.scrollIntoView({ behavior: "smooth", block: "nearest" });
     }, 100);
+  });
+</script>
+
+<script>
+  // Инициализация только после полной загрузки DOM
+  document.addEventListener("DOMContentLoaded", function () {
+    const brands = [
+      { src: "./images/accuphase.png", alt: "accuphase" },
+      { src: "./images/akai.png", alt: "akai" },
+      { src: "./images/alesis.png", alt: "alesis" },
+      { src: "./images/ar.png", alt: "ar" },
+      { src: "./images/aavik.png", alt: "aavik" },
+      { src: "./images/as.png", alt: "adam studio" },
+      { src: "./images/accuphase.png", alt: "accuphase" },
+      { src: "./images/ar.png", alt: "ar" },
+    ];
+
+    const brandsContainer = document.getElementById("brands-container");
+
+    // Заполняем контейнер брендами
+    brands.forEach((brand) => {
+      const slide = document.createElement("div");
+      slide.className = "swiper-slide brand-style";
+      slide.innerHTML = `<img src="${brand.src}" alt="${brand.alt}" />`;
+      brandsContainer.appendChild(slide);
+    });
+
+    // Инициализация Swiper
+    const brandSlider = new Swiper(".brandSlider", {
+      loop: true,
+      slidesPerView: 6,
+      spaceBetween: 10,
+    });
+
+    // Обработчик кнопки
+    document.getElementById("showbtn").addEventListener("click", function () {
+      const block = document.querySelector(".brands__block");
+      const button = this;
+
+      block.classList.toggle("grid-mode");
+
+      if (block.classList.contains("grid-mode")) {
+        button.textContent = "Свернуть";
+        brandSlider.destroy(true, true);
+      } else {
+        button.textContent = "Посмотреть все";
+        // Переинициализируем Swiper
+        new Swiper(".brandSlider", {
+          slidesPerView: "auto",
+          spaceBetween: 20,
+          freeMode: true,
+        });
+      }
+    });
   });
 </script>
