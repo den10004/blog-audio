@@ -1,5 +1,5 @@
 .popular {
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 .popular__headline {
@@ -16,13 +16,13 @@
 .popular__sort {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 27px;
+    gap: 5px;
+    margin-top: 20px;
 }
 
 
 
-.popular__sort>a>button {
+.popular__sort>li>a {
     display: flex;
     align-items: center;
     color: var(--color-black2C);
@@ -32,10 +32,18 @@
     height: 32px
 }
 
+
+.popular__sort>li>a>img {
+    margin-right: 5px;
+}
+
+
 .popular__search {
     display: flex;
     flex-wrap: wrap;
-    gap: 25px;
+    gap: 23px;
+    margin-top: 25px;
+    display: flex;
 }
 
 
@@ -67,12 +75,6 @@
 
 .strip-3 {
     width: 16px;
-}
-
-
-.popular__search {
-    margin-top: 30px;
-    display: flex;
 }
 
 .search-input {

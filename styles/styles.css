@@ -1,14 +1,14 @@
 @import "./header.css";
-@import "./banner.css";
+@import "./hero.css";
 @import "./popular.css";
+@import "./blog.css";
 @import "./normalize.css";
 @import "../vendor/fonts.css";
 
 body {
-  margin: 0 auto;
+  margin: 0;
+  max-width: 100%;
   padding: 0;
-  max-width: 1280px;
-  background: white;
 }
 
 
@@ -57,9 +57,9 @@ button {
 }
 
 .container {
-  max-width: 1232px;
-  padding: 0 16px;
-  box-sizing: border-box;
+  max-width: 1225px;
+  padding-left: 16px;
+  padding-right: 16px;
   margin: 0 auto;
 }
 
