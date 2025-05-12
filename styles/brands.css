@@ -3,13 +3,12 @@
 }
 
 .brands__block {
-    margin-top: 15px;
+    margin-top: 25px;
 }
 
 
 .swiper {
     width: 100%;
-    /*  height: 100%;*/
     height: 122px;
 }
 
@@ -78,7 +77,6 @@
     right: -50px;
 }
 
-/* Или вертикальное расположение */
 .swiper-vertical .swiper-button-prev {
     top: 10px;
     left: 50%;
@@ -98,7 +96,7 @@
     margin: 20px auto;
 }
 
-/* grid*/
+
 .brands-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
@@ -150,4 +148,30 @@
     height: auto !important;
     margin: 0 !important;
     transform: none !important;
+}
+
+.brand-head {
+    display: flex;
+    justify-content: space-between;
+    width: 100%
+}
+
+.brand-btn-block {
+    width: 90px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: -64px;
+    right: 0;
+}
+
+
+
+
+@media (max-width: 767px) {
+    .brand-btn-block {
+        width: 100%;
+        bottom: 0;
+        top: auto;
+    }
 }

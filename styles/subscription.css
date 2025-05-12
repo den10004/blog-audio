@@ -36,8 +36,24 @@
     width: 34px;
     height: 34px;
     border-radius: 50%;
-    background-color: var(--color-black2C);
 }
+
+.send-btn:hover {
+    background-color: var(--color-blue) !important;
+    transition: stroke 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.send-btn:hover>svg path {
+    fill: var(--color-white);
+    transition: stroke 0.3s ease-in-out, fill 0.3s ease-in-out;
+}
+
+.send-btn:hover>svg rect {
+    fill: #BEBEBE;
+    transition: stroke 0.3s ease-in-out, fill 0.3s ease-in-out;
+}
+
+
 
 .subscription__block>div {
     max-width: 306px;
@@ -46,6 +62,8 @@
 .subscription__block>div>span>a {
     color: var(--color-blue);
 }
+
+
 
 
 #scrollToTopBtn {
@@ -60,7 +78,21 @@
     align-items: center;
     justify-content: center;
     margin-left: 10px;
+
 }
+
+#scrollToTopBtn:hover {
+    background-color: var(--color-blue);
+    transition: stroke 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+#scrollToTopBtn:hover>svg path {
+    stroke: #BEBEBE;
+    transition: stroke 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+
+
 
 @media screen and (max-width: 900px) {
     .subscription__block {

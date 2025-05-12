@@ -6,6 +6,7 @@
 @import "./interes.css";
 @import "./brands.css";
 @import "./subscription.css";
+@import "./search.css";
 @import "./footer.css";
 @import "./normalize.css";
 @import "../vendor/fonts.css";
@@ -167,6 +168,10 @@ button {
 
 input {
   padding-left: 10px;
+}
+
+.style-color-arrow>path:hover {
+  fill: #BEBEBE
 }
 
 

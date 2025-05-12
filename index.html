@@ -443,18 +443,19 @@
 
     <section class="brands">
       <div class="container">
-        <div style="display: flex; justify-content: space-between; width: 100%">
+        <div class="brand-head">
           <h3 class="text-h3-bold">Бренды</h3>
+        </div>
 
-          <div
-            style="width: 90px; display: flex; justify-content: space-between"
-          >
+        <div class="brands__block" style="position: relative">
+          <div class="brand-btn-block">
             <div class="brand-button-next">
               <svg
                 width="15"
                 height="10"
                 viewBox="0 0 15 10"
                 fill="none"
+                class="style-color-arrow"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
@@ -468,6 +469,7 @@
                 width="15"
                 height="10"
                 viewBox="0 0 15 10"
+                class="style-color-arrow"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
@@ -478,9 +480,6 @@
               </svg>
             </div>
           </div>
-        </div>
-
-        <div class="brands__block">
           <div class="swiper brandSlider">
             <div class="swiper-wrapper" id="brands-container">
               <div class="swiper-slide brand-style">
@@ -571,12 +570,14 @@
             <path
               d="M11 21.001L11 2.48245"
               stroke="#0055CC"
+              class="change-color-on-hover"
               stroke-width="2"
               stroke-linecap="round"
             />
             <path
               d="M21 10.6304L11.2775 1.26792C11.1226 1.11875 10.8774 1.11876 10.7225 1.26792L1 10.6304"
               stroke="#0055CC"
+              class="change-color-on-hover"
               stroke-width="2"
               stroke-linecap="round"
             />
