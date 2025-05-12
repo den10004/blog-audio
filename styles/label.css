@@ -9,7 +9,7 @@
     padding: 5px 10px;
     border-radius: 100px;
     margin-right: 10px;
-    font-family: "SFProText";
+    font-family: "SFProText", "Arial", sans-serif;
     font-weight: 400;
     font-size: 15px;
     display: flex;
