@@ -58,7 +58,100 @@
         </ul>
       </div>
     </header>
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb text16">
+          <li><a href="/">Главная</a></li>
+          <li class="active"><a href="/catalog/">Бренды</a></li>
+        </ol>
+      </nav>
+    </div>
 
+    <section class="search">
+      <div class="container">
+        <form class="search__form">
+          <input type="text" placeholder="Например, саундбар" />
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 14 14"
+            class="text16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M5.50006 0C8.53765 0 11.0001 2.46256 11.0001 5.50029C11.0001 6.74868 10.5842 7.89993 9.88346 8.82304L13.7791 12.7233C14.0718 13.0164 14.0715 13.4913 13.7785 13.784C13.4854 14.0767 13.0105 14.0764 12.7178 13.7834L8.82266 9.88388C7.89959 10.5847 6.74839 11.0006 5.50006 11.0006C2.46246 11.0006 0 8.53802 0 5.50029C0 2.46256 2.46246 0 5.50006 0ZM5.50006 1.5C3.2909 1.5 1.5 3.29098 1.5 5.50029C1.5 7.70961 3.2909 9.50058 5.50006 9.50058C7.70921 9.50058 9.50011 7.70961 9.50011 5.50029C9.50011 3.29098 7.70921 1.5 5.50006 1.5Z"
+              fill="#0055CC"
+            />
+          </svg>
+
+          <button class="text16">Найти</button>
+        </form>
+
+        <div class="button-group">
+          <!-- Кнопки алфавита -->
+          <button onclick="filterByLetter('А')">А</button>
+          <button onclick="filterByLetter('Б')">Б</button>
+          <button onclick="filterByLetter('В')">В</button>
+          <button onclick="filterByLetter('Г')">Г</button>
+          <button onclick="filterByLetter('Д')">Д</button>
+          <button onclick="filterByLetter('Е')">Е</button>
+          <button onclick="filterByLetter('Ё')">Ё</button>
+          <button onclick="filterByLetter('Ж')">Ж</button>
+          <button onclick="filterByLetter('З')">З</button>
+          <button onclick="filterByLetter('И')">И</button>
+          <button onclick="filterByLetter('К')">К</button>
+          <button onclick="filterByLetter('Л')">Л</button>
+          <button onclick="filterByLetter('М')">М</button>
+          <button onclick="filterByLetter('Н')">Н</button>
+          <button onclick="filterByLetter('О')">О</button>
+          <button onclick="filterByLetter('П')">П</button>
+          <button onclick="filterByLetter('Р')">Р</button>
+          <button onclick="filterByLetter('С')">С</button>
+          <button onclick="filterByLetter('Т')">Т</button>
+          <button onclick="filterByLetter('У')">У</button>
+          <button onclick="filterByLetter('Ф')">Ф</button>
+          <button onclick="filterByLetter('Х')">Х</button>
+          <button onclick="filterByLetter('Ц')">Ц</button>
+          <button onclick="filterByLetter('Ч')">Ч</button>
+          <button onclick="filterByLetter('Ш')">Ш</button>
+          <button onclick="filterByLetter('Щ')">Щ</button>
+          <button onclick="filterByLetter('Э')">Э</button>
+          <button onclick="filterByLetter('Ю')">Ю</button>
+          <button onclick="filterByLetter('Я')">Я</button>
+
+          <button onclick="filterByLetter('A')">A</button>
+          <button onclick="filterByLetter('B')">B</button>
+          <button onclick="filterByLetter('C')">C</button>
+          <button onclick="filterByLetter('D')">D</button>
+          <button onclick="filterByLetter('E')">E</button>
+          <button onclick="filterByLetter('F')">F</button>
+          <button onclick="filterByLetter('G')">G</button>
+          <button onclick="filterByLetter('Н')">Н</button>
+          <button onclick="filterByLetter('I')">I</button>
+          <button onclick="filterByLetter('J')">J</button>
+          <button onclick="filterByLetter('K')">K</button>
+          <button onclick="filterByLetter('L')">L</button>
+          <button onclick="filterByLetter('M')">M</button>
+          <button onclick="filterByLetter('N')">N</button>
+          <button onclick="filterByLetter('O')">O</button>
+          <button onclick="filterByLetter('P')">P</button>
+          <button onclick="filterByLetter('Q')">Q</button>
+          <button onclick="filterByLetter('R')">R</button>
+          <button onclick="filterByLetter('S')">S</button>
+          <button onclick="filterByLetter('T')">T</button>
+          <button onclick="filterByLetter('T')">T</button>
+          <button onclick="filterByLetter('V')">V</button>
+          <button onclick="filterByLetter('W')">W</button>
+          <button onclick="filterByLetter('X')">X</button>
+          <button onclick="filterByLetter('Y')">Y</button>
+          <button onclick="filterByLetter('Z')">Z</button>
+        </div>
+
+        <!-- Список товаров -->
+        <ul id="product-list"></ul>
+      </div>
+    </section>
     <footer>
       <div class="footer-container">
         <div class="footer__left">
@@ -128,3 +221,60 @@
     </footer>
   </body>
 </html>
+
+<script>
+  // Массив товаров для демонстрации (пример)
+  const products = [
+    { name: "Апельсин", price: 70 },
+    { name: "Белый хлеб", price: 35 },
+    { name: "Варенье клубничное", price: 150 },
+    { name: "Газировка", price: 50 },
+    { name: "Дыня", price: 120 },
+    { name: "Ежевичный сок", price: 90 },
+    { name: "Желе лимонное", price: 60 },
+    { name: "Изюм сушёный", price: 80 },
+    { name: "Картофель молодой", price: 40 },
+    { name: "Морковь свежая", price: 30 },
+    { name: "Огурец свежий", price: 45 },
+    { name: "Перец болгарский", price: 65 },
+    { name: "Рыба красная", price: 400 },
+    { name: "Салат листовой", price: 55 },
+    { name: "Сыр голландский", price: 250 },
+    { name: "Творог жирный", price: 120 },
+    { name: "Укроп свежий", price: 25 },
+    { name: "Фасоль стручковая", price: 75 },
+    { name: "Хлеб ржаной", price: 40 },
+    { name: "Цветная капуста", price: 80 },
+    { name: "Черешня", price: 200 },
+    { name: "Шоколад молочный", price: 100 },
+    { name: "Щавель", price: 35 },
+    { name: "Эклеры ванильные", price: 90 },
+    { name: "Юбилейный торт", price: 300 },
+    { name: "Яблоки свежие", price: 60 },
+  ];
+
+  // Функция фильтра товаров по начальной букве
+  function filterByLetter(letter) {
+    const filteredProducts = products.filter((product) =>
+      product.name.startsWith(letter)
+    );
+    document.getElementById("product-list").innerHTML = "";
+
+    if (filteredProducts.length > 0) {
+      // Отображение списка продуктов, начиная на выбранную букву
+      filteredProducts.forEach((product) => {
+        let item = `<li><strong>${product.name}</strong></li>`;
+        document
+          .getElementById("product-list")
+          .insertAdjacentHTML("beforeend", item);
+      });
+    } else {
+      document.getElementById(
+        "product-list"
+      ).innerText = `Нет товаров на букву "${letter}"`;
+    }
+  }
+
+  // Заполняем начальное состояние страницы товарами на первую букву ("А")
+  filterByLetter("А");
+</script>
