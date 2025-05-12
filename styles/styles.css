@@ -109,6 +109,13 @@ button {
   line-height: 140%;
 }
 
+.text16 {
+  font-family: "Roboto", "Arial", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 140%;
+}
+
 .text14 {
   font-family: "Roboto", "Arial", sans-serif;
   font-size: 10px;
@@ -116,12 +123,6 @@ button {
   line-height: 140%;
 }
 
-.text16 {
-  font-family: "Roboto", "Arial", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 140%;
-}
 
 .text-small {
   font-family: "Roboto", "Arial", sans-serif;
