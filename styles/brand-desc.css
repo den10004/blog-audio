@@ -1,0 +1,125 @@
+.brand-desc {
+    margin-top: 20px;
+
+}
+
+.brand-desc__block {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 270px auto;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    background-color: var(--color-grayFA);
+    border-radius: 20px;
+}
+
+
+.brand-desc__img {
+    grid-area: 1 / 1 / 3 / 2;
+}
+
+.brand-desc__content {
+    grid-area: 1 / 2 / 2 / 3;
+    margin-top: 7px;
+}
+
+.brand-desc__text {
+    grid-area: 2 / 2 / 3 / 3;
+    margin-bottom: 20px;
+}
+
+.brand-desc__img>img {
+    width: 185px;
+    height: auto;
+    margin: 67px 0px 0 23px;
+}
+
+
+
+.brand-desc__content>h2 {
+    color: var(--color-blue);
+}
+
+.brand-desc__content>h4 {
+    color: var(--color-blue);
+    margin: 10px 0 13px 0;
+}
+
+.brand-desc__text>p {
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: all 0.3s ease;
+}
+
+.brand-desc__exp.expanded {
+    -webkit-line-clamp: unset;
+}
+
+
+.brand-brand-desc__text>button {
+    background: none;
+    color: var(--color-gray);
+    margin-top: 3px;
+}
+
+
+.toggle-btn {
+    background: none;
+    color: var(--color-gray);
+}
+
+
+@media screen and (max-width: 1000px) {
+    .brand-desc__block {
+        grid-template-columns: 200px auto;
+    }
+
+    .brand-desc__text>p {
+        -webkit-line-clamp: 10;
+    }
+
+    .brand-desc__img>img {
+        width: 150px;
+    }
+}
+
+@media screen and (max-width:767px) {
+    .brand-desc__block {
+        grid-template-columns: 100px auto;
+        grid-template-rows: auto;
+    }
+
+    .desc__block>img {
+        grid-area: 1 / 1 / 2 / 2;
+    }
+
+    .brand-desc__content {
+        grid-area: 1 / 2 / 2 / 3;
+    }
+
+    .brand-desc__text {
+        grid-area: 2 / 1 / 3 / 3;
+        margin-bottom: 0;
+    }
+
+    .brand-desc__text>p {
+        -webkit-line-clamp: 16;
+    }
+
+    .brand-desc__img>img {
+        width: 84px;
+        margin: 0;
+    }
+}
+
+@media screen and (max-width:425px) {
+    .brand-desc__content>h4 {
+        font-size: 14px !important;
+    }
+
+
+
+}

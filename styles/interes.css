@@ -1,9 +1,9 @@
 .interes {
-    margin-top: 50px;
+    margin-top: 27px;
 }
 
 .interes__card {
-    margin-top: 20px;
+    margin-top: 10px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 22px;
