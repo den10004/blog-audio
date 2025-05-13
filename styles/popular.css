@@ -94,6 +94,12 @@
     opacity: 1;
 }
 
+@media screen and (max-width: 900px) {
+    .hero {
+        margin-top: 30px;
+    }
+}
+
 @media screen and (max-width: 767px) {
     .popular__sort.collapsed {
         max-height: calc(2 * (1em + 16px + 2px * 2));
@@ -106,6 +112,17 @@
 
     .popular__search {
         gap: 15px;
+    }
+
+    .popular__text {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .popular__text>button {
+        color: var(--color-blue);
+        background: none;
     }
 }
 
