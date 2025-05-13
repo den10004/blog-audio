@@ -1,5 +1,5 @@
 .search {
-    margin-top: 50px;
+    margin-top: 26px;
 }
 
 
@@ -39,7 +39,7 @@
 
 .button-group {
     display: flex;
-    gap: 5px;
+    gap: 3px;
     flex-wrap: wrap;
     margin: 20px 0;
 }
@@ -47,7 +47,7 @@
 
 
 .alphabet-container {
-    margin: 20px 0;
+    margin: 30px 0 21px 0;
 }
 
 .alphabet-row {
@@ -80,6 +80,7 @@
     background-color: var(--color-grayFA);
     padding: 20px;
     border-radius: 20px;
+    max-height: 768px;
 }
 
 .brand-list.active {
@@ -106,5 +107,4 @@
 
 .brand-list li {
     padding: 5px 0;
-    font-size: 16px;
 }

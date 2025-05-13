@@ -7,6 +7,7 @@
 @import "./brands.css";
 @import "./subscription.css";
 @import "./search.css";
+@import "./brand-desc.css";
 @import "./footer.css";
 @import "./normalize.css";
 @import "../vendor/fonts.css";
@@ -217,7 +218,7 @@ input {
   padding-left: 0;
   display: flex;
   align-items: center;
-  margin-top: 50px;
+  margin-top: 45px;
 }
 
 .breadcrumb li+li::before {
