@@ -142,6 +142,12 @@ button {
   cursor: pointer;
 }
 
+input {
+  font-family: "SFProText", "Arial", sans-serif;
+  font-size: 16px;
+  color: var(--color-black2C);
+}
+
 ::-webkit-input-placeholder {
   color: #ccc;
   font-family: "SFProText", "Arial", sans-serif;
@@ -167,35 +173,11 @@ button {
 }
 
 input {
-  font-family: "Roboto", "Arial", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
+  padding-left: 10px;
 }
-
-
 
 .style-color-arrow>path:hover {
   fill: #BEBEBE
-}
-
-
-.breadcrumb {
-  list-style-type: none;
-  padding-left: 0;
-  display: flex;
-  align-items: center;
-  margin-top: 100px;
-}
-
-.breadcrumb li+li::before {
-  content: '|';
-  padding: 0 5px;
-  color: var(--color-black2C);
-}
-
-.breadcrumb a {
-  text-decoration: none;
-  color: var(--color-black2C);
 }
 
 
@@ -228,4 +210,23 @@ input {
     font-size: 16px;
   }
 
+}
+
+.breadcrumb {
+  list-style-type: none;
+  padding-left: 0;
+  display: flex;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.breadcrumb li+li::before {
+  content: '|';
+  padding: 0 5px;
+  color: var(--color-black2C);
+}
+
+.breadcrumb a {
+  text-decoration: none;
+  color: var(--color-black2C);
 }

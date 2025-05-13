@@ -88,68 +88,14 @@
           <button class="text16">Найти</button>
         </form>
 
-        <div class="button-group">
-          <!-- Кнопки алфавита -->
-          <button onclick="filterByLetter('А')">А</button>
-          <button onclick="filterByLetter('Б')">Б</button>
-          <button onclick="filterByLetter('В')">В</button>
-          <button onclick="filterByLetter('Г')">Г</button>
-          <button onclick="filterByLetter('Д')">Д</button>
-          <button onclick="filterByLetter('Е')">Е</button>
-          <button onclick="filterByLetter('Ё')">Ё</button>
-          <button onclick="filterByLetter('Ж')">Ж</button>
-          <button onclick="filterByLetter('З')">З</button>
-          <button onclick="filterByLetter('И')">И</button>
-          <button onclick="filterByLetter('К')">К</button>
-          <button onclick="filterByLetter('Л')">Л</button>
-          <button onclick="filterByLetter('М')">М</button>
-          <button onclick="filterByLetter('Н')">Н</button>
-          <button onclick="filterByLetter('О')">О</button>
-          <button onclick="filterByLetter('П')">П</button>
-          <button onclick="filterByLetter('Р')">Р</button>
-          <button onclick="filterByLetter('С')">С</button>
-          <button onclick="filterByLetter('Т')">Т</button>
-          <button onclick="filterByLetter('У')">У</button>
-          <button onclick="filterByLetter('Ф')">Ф</button>
-          <button onclick="filterByLetter('Х')">Х</button>
-          <button onclick="filterByLetter('Ц')">Ц</button>
-          <button onclick="filterByLetter('Ч')">Ч</button>
-          <button onclick="filterByLetter('Ш')">Ш</button>
-          <button onclick="filterByLetter('Щ')">Щ</button>
-          <button onclick="filterByLetter('Э')">Э</button>
-          <button onclick="filterByLetter('Ю')">Ю</button>
-          <button onclick="filterByLetter('Я')">Я</button>
-
-          <button onclick="filterByLetter('A')">A</button>
-          <button onclick="filterByLetter('B')">B</button>
-          <button onclick="filterByLetter('C')">C</button>
-          <button onclick="filterByLetter('D')">D</button>
-          <button onclick="filterByLetter('E')">E</button>
-          <button onclick="filterByLetter('F')">F</button>
-          <button onclick="filterByLetter('G')">G</button>
-          <button onclick="filterByLetter('Н')">Н</button>
-          <button onclick="filterByLetter('I')">I</button>
-          <button onclick="filterByLetter('J')">J</button>
-          <button onclick="filterByLetter('K')">K</button>
-          <button onclick="filterByLetter('L')">L</button>
-          <button onclick="filterByLetter('M')">M</button>
-          <button onclick="filterByLetter('N')">N</button>
-          <button onclick="filterByLetter('O')">O</button>
-          <button onclick="filterByLetter('P')">P</button>
-          <button onclick="filterByLetter('Q')">Q</button>
-          <button onclick="filterByLetter('R')">R</button>
-          <button onclick="filterByLetter('S')">S</button>
-          <button onclick="filterByLetter('T')">T</button>
-          <button onclick="filterByLetter('T')">T</button>
-          <button onclick="filterByLetter('V')">V</button>
-          <button onclick="filterByLetter('W')">W</button>
-          <button onclick="filterByLetter('X')">X</button>
-          <button onclick="filterByLetter('Y')">Y</button>
-          <button onclick="filterByLetter('Z')">Z</button>
+        <div class="alphabet-container">
+          <div class="alphabet-row" id="englishAlphabetContainer"></div>
+          <div class="alphabet-row" id="russianAlphabetContainer"></div>
         </div>
-
-        <!-- Список товаров -->
-        <ul id="product-list"></ul>
+        <div class="brand-list" id="brandList">
+          <h2 id="selectedLetter"></h2>
+          <ul id="brandItems"></ul>
+        </div>
       </div>
     </section>
     <footer>
@@ -223,58 +169,119 @@
 </html>
 
 <script>
-  // Массив товаров для демонстрации (пример)
-  const products = [
-    { name: "Accuphase", name: "ADAM AUDIO", name: "Acoustic Solid" },
-    { name: "Белый хлеб", price: 35 },
-    { name: "Варенье клубничное", price: 150 },
-    { name: "Газировка", price: 50 },
-    { name: "Дыня", price: 120 },
-    { name: "Ежевичный сок", price: 90 },
-    { name: "Желе лимонное", price: 60 },
-    { name: "Изюм сушёный", price: 80 },
-    { name: "Картофель молодой", price: 40 },
-    { name: "Морковь свежая", price: 30 },
-    { name: "Огурец свежий", price: 45 },
-    { name: "Перец болгарский", price: 65 },
-    { name: "Рыба красная", price: 400 },
-    { name: "Салат листовой", price: 55 },
-    { name: "Сыр голландский", price: 250 },
-    { name: "Творог жирный", price: 120 },
-    { name: "Укроп свежий", price: 25 },
-    { name: "Фасоль стручковая", price: 75 },
-    { name: "Хлеб ржаной", price: 40 },
-    { name: "Цветная капуста", price: 80 },
-    { name: "Черешня", price: 200 },
-    { name: "Шоколад молочный", price: 100 },
-    { name: "Щавель", price: 35 },
-    { name: "Эклеры ванильные", price: 90 },
-    { name: "Юбилейный торт", price: 300 },
-    { name: "Яблоки свежие", price: 60 },
-  ];
+  const russianAlphabet = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ".split("");
+  const englishAlphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
-  // Функция фильтра товаров по начальной букве
-  function filterByLetter(letter) {
-    const filteredProducts = products.filter((product) =>
-      product.name.startsWith(letter)
+  const brands = {
+    А: ["Accuphase", "Acoustic Solid", "ADAM AUDIO"],
+    Б: ["Accuphase", "Acoustic Solid"],
+    В: ["Accuphase", "Acoustic Solid", "ADAM AUDIO"],
+    Г: ["Accuphase", "Acoustic Solid"],
+    Д: ["Accuphase", "Acoustic Solid", "ADAM AUDIO"],
+    Е: ["Accuphase", "Acoustic Solid"],
+    Ж: ["Accuphase", "Acoustic Solid", "ADAM AUDIO"],
+    З: ["Accuphase", "Acoustic Solid"],
+    И: ["Accuphase", "Acoustic Solid", "ADAM AUDIO"],
+    К: ["Accuphase", "Acoustic Solid"],
+
+    A: ["Accuphase", "Acoustic Solid", "ADAM AUDIO"],
+    B: ["Acoustic Solid", "ADAM AUDIO"],
+    C: ["Accuphase", "Acoustic Solid", "ADAM AUDIO"],
+    D: ["Accuphase", "Acoustic Solid", "ADAM AUDIO"],
+    E: ["Accuphase", "Acoustic Solid", "ADAM AUDIO"],
+    F: ["Accuphase", "Acoustic Solid", "ADAM AUDIO"],
+    G: ["Accuphase", "Acoustic Solid", "ADAM AUDIO"],
+    H: ["Accuphase", "Acoustic Solid"],
+    I: ["Accuphase", "Acoustic Solid", "ADAM AUDIO"],
+    J: ["Accuphase", "Acoustic Solid", "ADAM AUDIO"],
+    K: ["Accuphase", "Acoustic Solid", "ADAM AUDIO"],
+    L: ["Accuphase", "Acoustic Solid", "ADAM AUDIO"],
+    M: ["Accuphase", "Acoustic Solid", "ADAM AUDIO"],
+    N: ["Accuphase", "Acoustic Solid", "ADAM AUDIO"],
+    O: ["Accuphase", "Acoustic Solid", "ADAM AUDIO"],
+    P: ["Accuphase", "ADAM AUDIO"],
+    Q: ["Accuphase", "Acoustic Solid", "ADAM AUDIO"],
+    R: ["Accuphase", "Acoustic Solid", "ADAM AUDIO"],
+    S: ["Accuphase", "Acoustic Solid", "ADAM AUDIO"],
+    T: ["Accuphase", "Acoustic Solid", "ADAM AUDIO"],
+    U: ["Accuphase", "Acoustic Solid", "ADAM AUDIO"],
+    V: ["Accuphase", "Acoustic Solid", "ADAM AUDIO"],
+    W: ["Accuphase", "Acoustic Solid", "ADAM AUDIO"],
+    X: ["Accuphase", "Acoustic Solid", "ADAM AUDIO"],
+    Y: ["Accuphase", "Acoustic Solid", "ADAM AUDIO"],
+    Z: ["Accuphase", "Acoustic Solid", "ADAM AUDIO"],
+  };
+
+  const russianAlphabetContainer = document.getElementById(
+    "russianAlphabetContainer"
+  );
+  const englishAlphabetContainer = document.getElementById(
+    "englishAlphabetContainer"
+  );
+  const brandList = document.getElementById("brandList");
+  const selectedLetter = document.getElementById("selectedLetter");
+  const brandItems = document.getElementById("brandItems");
+
+  // Generate alphabet buttons only for letters with brands
+  function createAlphabetButtons() {
+    const availableLetters = Object.keys(brands);
+    const filteredRussianAlphabet = russianAlphabet.filter((letter) =>
+      availableLetters.includes(letter)
     );
-    document.getElementById("product-list").innerHTML = "";
+    const filteredEnglishAlphabet = englishAlphabet.filter((letter) =>
+      availableLetters.includes(letter)
+    );
+    const allFilteredLetters = [
+      ...filteredRussianAlphabet,
+      ...filteredEnglishAlphabet,
+    ];
 
-    if (filteredProducts.length > 0) {
-      // Отображение списка продуктов, начиная на выбранную букву
-      filteredProducts.forEach((product) => {
-        let item = `<li><strong>${product.name}</strong></li>`;
-        document
-          .getElementById("product-list")
-          .insertAdjacentHTML("beforeend", item);
-      });
-    } else {
-      document.getElementById(
-        "product-list"
-      ).innerText = `Нет товаров на букву "${letter}"`;
+    // Populate Russian buttons
+    filteredRussianAlphabet.forEach((letter) => {
+      const button = document.createElement("button");
+      button.classList.add("alphabet-button");
+      button.textContent = letter;
+      button.addEventListener("click", () => showBrands(letter));
+      russianAlphabetContainer.appendChild(button);
+    });
+
+    // Populate English buttons
+    filteredEnglishAlphabet.forEach((letter) => {
+      const button = document.createElement("button");
+      button.classList.add("alphabet-button");
+      button.textContent = letter;
+      button.addEventListener("click", () => showBrands(letter));
+      englishAlphabetContainer.appendChild(button);
+    });
+
+    // Activate the first letter's button and show its brands
+    if (allFilteredLetters.length > 0) {
+      showBrands(allFilteredLetters[0]);
     }
   }
 
-  // Заполняем начальное состояние страницы товарами на первую букву ("А")
-  filterByLetter("А");
+  // Show brands for the selected letter
+  function showBrands(letter) {
+    // Update active button state
+    document.querySelectorAll(".alphabet-button").forEach((btn) => {
+      btn.classList.toggle("active", btn.textContent === letter);
+    });
+
+    // Update brand list
+    selectedLetter.textContent = `${letter}`;
+    brandItems.innerHTML = "";
+
+    const brandListForLetter = brands[letter] || ["Нет брендов для этой буквы"];
+    brandListForLetter.forEach((brand) => {
+      const li = document.createElement("li");
+      li.textContent = brand;
+      brandItems.appendChild(li);
+    });
+
+    // Show the brand list
+    brandList.classList.add("active");
+  }
+
+  // Initialize the page
+  createAlphabetButtons();
 </script>
