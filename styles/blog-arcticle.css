@@ -93,6 +93,24 @@
     }
 }
 
+@media screen and (max-width:767px) {
+    .article__headline>h3 {
+        margin-top: 6px;
+    }
+
+    .article__img>img {
+        width: 312px;
+    }
+
+    .article__desc>h2 {
+        margin-top: 13px;
+        font-size: 32px !important;
+    }
+
+    .blog__art {
+        padding: 15px;
+    }
+}
 
 
 

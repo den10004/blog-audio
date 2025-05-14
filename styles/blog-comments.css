@@ -6,12 +6,26 @@
     margin-top: 20px;
 }
 
+.comments__cards>article:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+
 
 .comments__card {
     background-color: var(--color-grayF8);
     padding: 20px;
     border-radius: 20px;
 }
+
+.comments__card>h3 {
+    font-family: "Roboto", "Arial", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 114%;
+    margin: 10px 0;
+}
+
 
 .comments__btn {
     display: flex;
