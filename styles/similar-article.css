@@ -1,0 +1,34 @@
+    .blog__similar {
+        background-color: var(--color-grayF8);
+        padding: 20px;
+        border-radius: 20px;
+    }
+
+    .similarArticle {
+        margin-top: 10px;
+    }
+
+    .similarArticle__img>img {
+        width: 100%;
+        height: auto;
+    }
+
+
+
+    .similarArticle__span {
+        display: flex;
+        margin-top: 20px;
+    }
+
+    .similarArticle__span>div {
+        display: flex;
+        align-items: center;
+        margin-right: 20px;
+        color: var(--color-gray);
+    }
+
+    .similarArticle__span>div>svg {
+        display: flex;
+        align-items: center;
+        margin-right: 5px;
+    }
