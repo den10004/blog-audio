@@ -15,7 +15,9 @@
     <link rel="stylesheet" href="./vendor/fonts.css" />
     <link rel="stylesheet" href="./styles/styles.css" />
   </head>
-  <body>
+  <body
+    style="display: flex; flex-direction: column; min-height: 100vh; margin: 0"
+  >
     <header class="header">
       <div class="container">
         <div class="header__block">
@@ -60,7 +62,28 @@
     </header>
 
     <section class="thanks">
-      <div class="container"></div>
+      <div class="container">
+        <div class="thanks__wrap">
+          <div class="thanks__info">
+            <div>
+              <h2 class="text-h2">Иван, спасибо за заявку!</h2>
+              <p class="text">Мы свяжемся с Вами в ближайшее время </p>
+              <p class="text">График работы: Пн-Пт с 9:00 до 18:00 по Москве</p>
+              <p class="text">
+                Если Вы оставили заявку в нерабочее время, мы перезвоним Вам на
+                следующий рабочий день.
+              </p>
+              <a href="#"
+                ><button class="blogbtnblue">Вернуться на главную</button></a
+              >
+            </div>
+          </div>
+
+          <div class="thanks__img">
+            <img src="./images/thanks.webp" alt="спасибо" />
+          </div>
+        </div>
+      </div>
     </section>
     <footer>
       <div class="footer-container">
