@@ -159,7 +159,6 @@ button {
 }
 
 .blogbtnwhite {
-  background-color: none;
   border-radius: 100px;
   color: var(--color-blue);
   padding: 20px 5px;
@@ -248,21 +247,45 @@ textarea {
 
 }
 
-.breadcrumb {
-  list-style-type: none;
-  padding-left: 0;
+
+.breadcrumbs-container {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.breadcrumbs {
+  display: flex;
+  padding: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.breadcrumb-item {
   display: flex;
   align-items: center;
-  margin-top: 45px;
+  flex-shrink: 0;
 }
 
-.breadcrumb li+li::before {
-  content: '|';
-  padding: 0 5px;
+.breadcrumb-item:not(:last-child)::after {
+  content: "|";
+  margin: 0 8px;
+  color: var(--color-black2C)
+}
+
+.breadcrumb-item a {
   color: var(--color-black2C);
-}
-
-.breadcrumb a {
   text-decoration: none;
-  color: var(--color-black2C);
+}
+
+.breadcrumb-item a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb-item:last-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex-shrink: 1;
+  min-width: 0;
 }
