@@ -10,6 +10,7 @@
 @import "./brand-desc.css";
 @import "./blog.css";
 @import "./blog-arcticle.css";
+@import "./blog-comments.css";
 @import "./footer.css";
 @import "./normalize.css";
 @import "../vendor/fonts.css";
@@ -20,6 +21,9 @@ body {
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 
 * {
   margin: 0;
@@ -59,6 +63,7 @@ button {
   --color-black2C: #2C2C2C;
   --color-gray: #BEBEBE;
   --color-grayF8: #F8F8F8;
+  --color-grayAO: #A0A0A0;
   --color-grayF4: #F4F4F4;
   --color-grayF5: #F5F5F5;
   --color-grayFA: #FAFAFA;
@@ -165,35 +170,46 @@ input {
   font-family: "SFProText", "Arial", sans-serif;
   font-size: 16px;
   color: var(--color-black2C);
+  padding-left: 10px;
+}
+
+
+textarea {
+  font-family: "SFProText", "Arial", sans-serif;
+  font-size: 16px;
+  color: var(--color-black2C);
+  padding: 20px 10px 10px 10px;
 }
 
 ::-webkit-input-placeholder {
-  color: #ccc;
   font-family: "SFProText", "Arial", sans-serif;
-  color: var(--color-black2C);
+  color: var(--color-grayAO);
 }
 
 :-moz-placeholder {
-  color: #ccc;
   font-family: "SFProText", "Arial", sans-serif;
-  color: var(--color-black2C);
+  color: var(--color-grayAO);
 }
 
 ::-moz-placeholder {
-  color: #ccc;
   font-family: "SFProText", "Arial", sans-serif;
-  color: var(--color-black2C);
+  color: var(--color-grayAO);
 }
 
 :-ms-input-placeholder {
-  color: #ccc;
   font-family: "SFProText", "Arial", sans-serif;
-  color: var(--color-black2C);
+  color: var(--color-grayAO);
 }
 
-input {
-  padding-left: 10px;
+
+.inputform {
+  border-radius: 12px;
+  box-sizing: border-box;
+  border: 1px solid #A0A0A0;
+  background-color: transparent;
 }
+
+
 
 .style-color-arrow>path:hover {
   fill: #BEBEBE

@@ -597,6 +597,7 @@
                     <div class="application__form-group">
                       <label class="text-small" for="name">Введите имя*</label>
                       <input
+                        class="inputform"
                         type="text"
                         id="name"
                         minlength="3"
@@ -611,6 +612,7 @@
                         >Введите номер телефона*</label
                       >
                       <input
+                        class="inputform"
                         type="tel"
                         id="phone"
                         name="phone"
@@ -627,9 +629,140 @@
                 </div>
               </div>
 
-              <div class="comments"></div>
+              <div class="comments">
+                <h3 class="text-h3-bold">Комментарии (60)</h3>
+
+                <div class="comments__cards">
+                  <article class="comments__card">
+                    <time class="text-small" datetime="16-04-2025"
+                      >16/04/2025</time
+                    >
+                    <h3>Гость</h3>
+
+                    <div>
+                      <p class="text">
+                        Обычная блютуз моногарнитура для разговоров. Музыку
+                        через нее не слушаю разумеется. Есть два варианта
+                        кодеков sbc и аac. При sbc в принципе голос мой и
+                        собеседника можно охарактеризовать как HD аудио. Нет
+                        глухости или обрезки каких то частот.  Где то слышал что
+                        лучше отключить aac и выбрать sbc , якобы у sbc
+                        потребление процессором гарнитуры меньше, и в моем
+                        случае дольше на 4 часа будет работать ( аккумулятор
+                        гарнитуры 300 мАч). Есть такое?
+                      </p>
+                    </div>
+
+                    <div class="comments__btn">
+                      <a href="#reply" class="comment-reply text16"
+                        >Ответить на комментарий</a
+                      >
+                    </div>
+                  </article>
+                  <article class="comments__card">
+                    <time class="text-small" datetime="16-04-2025"
+                      >16/04/2025</time
+                    >
+                    <h3>Гость</h3>
+
+                    <div>
+                      <p class="text">
+                        Обычная блютуз моногарнитура для разговоров. Музыку
+                        через нее не слушаю разумеется. Есть два варианта
+                        кодеков sbc и аac. При sbc в принципе голос мой и
+                        собеседника можно охарактеризовать как HD аудио. Нет
+                        глухости или обрезки каких то частот.  Где то слышал что
+                        лучше отключить aac и выбрать sbc , якобы у sbc
+                        потребление процессором гарнитуры меньше, и в моем
+                        случае дольше на 4 часа будет работать ( аккумулятор
+                        гарнитуры 300 мАч). Есть такое?
+                      </p>
+                    </div>
+
+                    <div class="comments__btn">
+                      <a href="#reply" class="comment-reply text16"
+                        >Ответить на комментарий</a
+                      >
+                    </div>
+                  </article>
+
+                  <div class="comments__nav">
+                    <div class="number-buttons">
+                      <button class="number-button">1</button>
+                      <button class="number-button active">2</button>
+                      <button class="number-button">3</button>
+                      <button class="number-button">4</button>
+                      <button class="number-button active">
+                        <svg
+                          width="15"
+                          height="8"
+                          viewBox="0 0 15 8"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M14.3536 4.35355C14.5488 4.15829 14.5488 3.84171 14.3536 3.64645L11.1716 0.464466C10.9763 0.269204 10.6597 0.269204 10.4645 0.464466C10.2692 0.659728 10.2692 0.976311 10.4645 1.17157L13.2929 4L10.4645 6.82843C10.2692 7.02369 10.2692 7.34027 10.4645 7.53553C10.6597 7.7308 10.9763 7.7308 11.1716 7.53553L14.3536 4.35355ZM0 4.5H14V3.5H0V4.5Z"
+                            fill="#BEBEBE"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="comments__send comments__card" id="reply">
+                    <h3 class="text-h3-bold">Оставить комментарий</h3>
+
+                    <form action="/sendform" method="POST">
+                      <div class="comments__send__form-group">
+                        <label class="text-small" for="name"
+                          >Введите имя*</label
+                        >
+                        <input
+                          type="text"
+                          class="inputform"
+                          id="name"
+                          minlength="3"
+                          name="name"
+                          required
+                          placeholder="Гость"
+                        />
+                      </div>
+
+                      <div class="comments__send__form-group">
+                        <label class="text-small" for="comment-area"
+                          >Комментарий*</label
+                        >
+                        <textarea
+                          class="inputform"
+                          id="comments"
+                          name="comment-area"
+                          type="text"
+                          required
+                          placeholder="Введите ваш комментарий"
+                        ></textarea>
+                      </div>
+
+                      <button type="submit" class="blogbtnblue text-h3">
+                        Отправить
+                        <svg
+                          width="26"
+                          height="25"
+                          viewBox="0 0 26 25"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M2.06072 0.31243C1.02893 -0.180428 -0.10464 0.76243 0.190003 1.86707L2.35 9.93814C2.40414 10.141 2.51667 10.3235 2.67363 10.4629C2.83058 10.6023 3.02505 10.6926 3.23286 10.7224L13.8229 12.2353C14.1293 12.2781 14.1293 12.7217 13.8229 12.7656L3.23393 14.2774C3.02612 14.3073 2.83166 14.3975 2.6747 14.537C2.51774 14.6764 2.40521 14.8589 2.35107 15.0617L0.190003 23.1371C-0.10464 24.2406 1.02893 25.1835 2.06072 24.6917L25.0943 13.7106C26.1111 13.2264 26.1111 11.7778 25.0943 11.2924L2.06072 0.31243Z"
+                            fill="white"
+                          />
+                        </svg>
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="blog__article"></div>
+            <div class="blog__article">sdfsdfdsf</div>
           </div>
         </div>
       </div>
@@ -900,5 +1033,15 @@
       nextEl: ".blog-button-next",
       prevEl: ".blog-button-prev",
     },
+  });
+</script>
+
+<script>
+  const buttons = document.querySelectorAll(".number-button");
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      buttons.forEach((btn) => btn.classList.remove("active"));
+      button.classList.add("active");
+    });
   });
 </script>
