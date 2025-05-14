@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Аудиоблог</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="robots" content="" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./vendor/fonts.css" />
+    <link rel="stylesheet" href="./styles/styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header__block">
+          <div class="header__logo_block">
+            <a class="header__logo" href="#">LIMAUDIO</a>
+            <ul class="header__contacts-min">
+              <button>
+                <img
+                  src="./images/SearchIcon.svg"
+                  alt="кнопка поиска"
+                /></button
+              ><button>
+                <img src="./images/menu-filled.svg" alt="кнопка меню" />
+              </button>
+            </ul>
+          </div>
+          <nav>
+            <ul>
+              <li><a href="/">Обзоры</a></li>
+              <li><a href="/">Сравнения</a></li>
+              <li><a href="/">Топы</a></li>
+              <li><a href="/">Гайды и советы</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <ul class="header__contacts">
+          <li><a href="tel: 88007700473">8 (800) 770-04-73</a></li>
+          <li class="header__btn">Заказать звонок</li>
+          <li>
+            <a href="https://wa.me/79200000000"
+              ><img src="./images/whatsapp.svg" alt="whatsapp"
+            /></a>
+          </li>
+          <li>
+            <a href="https://t.me/example_user"
+              ><img src="./images/tg.svg" alt="телеграм"
+            /></a>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <div class="container">
+      <div class="breadcrumbs-container">
+        <div class="breadcrumbs">
+          <div class="breadcrumb-item text16">
+            <a href="#">Главная</a>
+          </div>
+          <div class="breadcrumb-item text16">
+            <a href="#">Контакты</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="subscription">
+      <div class="container">
+        <div class="subscription__block">
+          <h3 class="text-h3-bold">
+            Подпишитесь на рассылку <br />
+            и получите скидку
+          </h3>
+          <form>
+            <input
+              type="email"
+              placeholder="Введите E-mail"
+              required
+              pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+            />
+            <button class="send-btn">
+              <svg
+                width="35"
+                height="34"
+                viewBox="0 0 35 34"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  x="0.375977"
+                  y="0.000976562"
+                  width="34"
+                  height="34"
+                  rx="17"
+                  fill="#2C2C2C"
+                />
+                <path
+                  d="M24.8002 17.4252C25.0346 17.1909 25.0346 16.811 24.8002 16.5767L20.9819 12.7583C20.7475 12.524 20.3677 12.524 20.1333 12.7583C19.899 12.9927 19.899 13.3725 20.1333 13.6069L23.5274 17.001L20.1333 20.3951C19.899 20.6294 19.899 21.0093 20.1333 21.2436C20.3677 21.4779 20.7475 21.4779 20.9819 21.2436L24.8002 17.4252ZM10.376 17.601H24.376V16.401H10.376V17.601Z"
+                  fill="#F8F8F8"
+                />
+              </svg>
+            </button>
+          </form>
+
+          <div class="text-small">
+            <span
+              >Нажимая на стрелку “Далее”, Вы даете согласие на получение
+              рекламной рассылки и обработку <a href="/">персональных данных</a>
+            </span>
+          </div>
+        </div>
+        <button id="scrollToTopBtn">
+          <svg
+            width="22"
+            height="22"
+            viewBox="0 0 22 22"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M11 21.001L11 2.48245"
+              stroke="#0055CC"
+              class="change-color-on-hover"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+            <path
+              d="M21 10.6304L11.2775 1.26792C11.1226 1.11875 10.8774 1.11876 10.7225 1.26792L1 10.6304"
+              stroke="#0055CC"
+              class="change-color-on-hover"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+          </svg>
+        </button>
+      </div>
+    </section>
+    <footer>
+      <div class="footer-container">
+        <div class="footer__left">
+          <div class="footer__logo">
+            <a class="text-h2" href="#">LIMAUDIO</a>
+            <a class="text14" href="#">Политика конфиденциальности</a>
+          </div>
+
+          <ul class="text16">
+            <li><a href="#">О компании</a></li>
+            <li><a href="#">Контакты</a></li>
+            <li><a href="#">Каталог</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__center">
+          <ul class="text-small">
+            <li><a href="#">Напольная акустика</a></li>
+            <li><a href="#">Полочная акустика</a></li>
+            <li><a href="#">Встраиваемая акустика</a></li>
+            <li><a href="#">Dolby.Atmos</a></li>
+            <li><a href="#">Сабвуферы</a></li>
+            <li><a href="#">Комплекты акустики</a></li>
+            <li><a href="#">AV Ресиверы</a></li>
+            <li><a href="#">AV Процессоры</a></li>
+            <li><a href="#">Предусилители</a></li>
+            <li><a href="#">Усилители</a></li>
+            <li><a href="#">Сетевые проигрыватели</a></li>
+            <li><a href="#">Проигрыватели винила</a></li>
+            <li><a href="#">Проекторы и экраны</a></li>
+            <li><a href="#">Фонокорректоры</a></li>
+            <li><a href="#">ЦАПы</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__right">
+          <div>
+            <ul class="text16">
+              <li class="text">
+                <a href="tel:88007700473">8 (800) 770-04-73</a>
+              </li>
+              <li class="text-small">Заказать обратный звонок</li>
+            </ul>
+            <ul class="footer__icons">
+              <li>
+                <a href="https://wa.me/79200000000"
+                  ><img src="./images/whatsapp.svg" alt="whatsapp"
+                /></a>
+              </li>
+              <li>
+                <a href="https://t.me/example_user"
+                  ><img src="./images/tg.svg" alt="телеграм"
+                /></a>
+              </li>
+            </ul>
+
+            <div class="footer__switch">
+              <span class="text16">Светлая тема</span>
+              <div class="switch">
+                <input type="checkbox" id="toggle-switch" />
+                <label for="toggle-switch"></label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
