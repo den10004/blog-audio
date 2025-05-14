@@ -138,7 +138,7 @@
               <div class="blog__part">
                 <img src="./images/blog.webp" alt="blog" />
 
-                <p class="text mtpart">
+                <p class="text blog-main">
                   Bluetooth — это технология беспроводной связи, позволяющая
                   среди прочего подключить наушники или портативную акустику,
                   стереосистему или саундбар к вашему смартфону или ноутбуку.
@@ -166,9 +166,9 @@
                   </ul>
                 </div>
               </div>
-              <div class="blog__part mtpart">
+              <div class="blog__part">
                 <h3 class="text-h3-bold">Версии Bluetooth</h3>
-                <p class="text mt20 mtpart">
+                <p class="text blog-main">
                   За прошедшие с начала века годы Bluetooth кардинально
                   улучшился, и сжатие звука сегодня не такое грубое, как это
                   было во времена Bluetooth 1.1 или 2.0 (когда беспроводные
@@ -218,7 +218,7 @@
                 </p>
               </div>
 
-              <div class="blog__part mtpart">
+              <div class="blog__part">
                 <div class="swiper blogSlider" style="position: relative">
                   <div class="swiper-wrapper">
                     <div class="swiper-slide">
@@ -263,8 +263,8 @@
                   </div>
                 </div>
 
-                <h3 class="text-h3-bold mtpart">Bluetooth и аудиокодеки </h3>
-                <p class="text mtpart">
+                <h3 class="text-h3-bold blog-main">Bluetooth и аудиокодеки </h3>
+                <p class="text blog-main">
                   Итак, непосредственно на финальное звучание сейчас больше
                   влияет не версия Bluetooth, а то, какой аудиокодек
                   используются при передаче звука. По сути под кодеком здесь
@@ -393,9 +393,9 @@
                   устройств.
                 </p>
 
-                <div class="mtpart">
+                <div class="blog-main">
                   <h2 class="text-h3-bold">Итак, подведем итоги:</h2>
-                  <ul class="blog-list text mtpart">
+                  <ul class="blog-list text blog-main">
                     <li>
                       Версия Bluetooth чаще всего не влияет на качество звука
                       напрямую.
@@ -422,11 +422,8 @@
                 <ul class="popular__sort collapsed" id="linksList">
                   <li>
                     <a class="text16">
-                      <img
-                        src="./images/homeСinema.png"
-                        alt="Домашний кинотеатр"
-                      />
-                      <span>Домашний кинотеатр</span>
+                      <img src="./images/homeСinema.png" alt="Акустика" />
+                      <span>Акустика</span>
                     </a>
                   </li>
                   <li>
@@ -450,7 +447,7 @@
               <div class="text-h3-bold blog__share">
                 <h3>Поделиться статьей:</h3>
 
-                <div class="mtpart">
+                <div class="share-social">
                   <a href="#">
                     <svg
                       width="34"
@@ -597,7 +594,11 @@
                   <div>
                     <img src="./images/manager.webp" alt="менеджер" />
                   </div>
-                  <form action="/sendform" method="POST">
+                  <form
+                    class="application__sendform"
+                    action="/sendform"
+                    method="POST"
+                  >
                     <div class="application__form-group">
                       <label class="text-small" for="name">Введите имя*</label>
                       <input
@@ -626,7 +627,7 @@
                       />
                     </div>
 
-                    <button type="submit" class="blogbtnblue text">
+                    <button type="submit" class="blogbtnblue text-h3">
                       Подобрать акустику
                     </button>
                   </form>
@@ -716,7 +717,11 @@
                   <div class="comments__send comments__card" id="reply">
                     <h3 class="text-h3-bold">Оставить комментарий</h3>
 
-                    <form action="/sendform" method="POST">
+                    <form
+                      class="comments__send__form"
+                      action="/sendform"
+                      method="POST"
+                    >
                       <div class="comments__send__form-group">
                         <label class="text-small" for="name"
                           >Введите имя*</label

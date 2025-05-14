@@ -251,12 +251,11 @@ textarea {
 .breadcrumbs-container {
   width: 100%;
   overflow: hidden;
-  margin-top: 20px;
+  margin-top: 45px;
 }
 
 .breadcrumbs {
   display: flex;
-  padding: 10px;
   white-space: nowrap;
   overflow: hidden;
 }
@@ -288,4 +287,10 @@ textarea {
   white-space: nowrap;
   flex-shrink: 1;
   min-width: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .breadcrumbs-container {
+    margin-top: 20px;
+  }
 }
