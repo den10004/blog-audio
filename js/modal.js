@@ -1,7 +1,12 @@
 const modal = document.getElementById("myModal");
+const sortModal = document.getElementById("sortModal");
 
 function openHeaderMenu() {
   modal.classList.add("active");
+}
+
+function openSort() {
+  sortModal.classList.add("active");
 }
 
 function closeModal() {
