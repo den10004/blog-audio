@@ -104,7 +104,8 @@
         <div class="contacts__container">
           <div class="contacts__about blockbg">
             <h2 class="text-h2">Контакты</h2>
-            <ul>
+
+            <ul class="contacts__list">
               <li>
                 <label class="text">График работы: </label>
                 <span class="text20">с 9:00 до 18:00</span>
@@ -142,7 +143,7 @@
                     fill="#2AABEE"
                   />
                 </svg>
-                <span> Написать нам в Телеграм</span>
+                <span>Написать нам в Телеграм</span>
               </a>
               <a href="https://wa.me/79200000000">
                 <svg
@@ -157,11 +158,102 @@
                     fill="#25D366"
                   />
                 </svg>
-                <span> Написать нам в WhatsApp</span>
+                <span>Написать нам в WhatsApp</span>
               </a>
             </div>
           </div>
-          <div class="contacts__map"></div>
+          <div class="contacts__map">
+            <div id="map1" class="map-container active"></div>
+            <div id="map2" class="map-container"></div>
+
+            <div class="tabs">
+              <button class="tab-button active text20" onclick="showMap(1)">
+                г. Казань, ул. Бухарская, д. 32 к2
+              </button>
+              <button class="tab-button text20" onclick="showMap(2)">
+                г. Новосибирск, ул. Гаранина, д. 15
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sendForm">
+      <div class="container">
+        <div class="comments__send comments__card">
+          <h3 class="text-h2">Остались вопросы?</h3>
+          <form class="comments__send__form" action="/sendform" method="POST">
+            <div class="contacts__form">
+              <div class="comments__send__form-group">
+                <label class="text-small" for="name">Введите имя*</label>
+                <input
+                  type="text"
+                  class="inputform"
+                  id="name"
+                  minlength="3"
+                  name="name"
+                  required
+                  placeholder="Гость"
+                />
+              </div>
+              <div class="comments__send__form-group">
+                <label class="text-small" for="phone"
+                  >Введите номер телефона*</label
+                >
+                <input
+                  class="inputform"
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  pattern="(\+?\d[- .]*){7,}"
+                  required
+                  placeholder="+7 (___) ___-__-__"
+                />
+              </div>
+
+              <div class="comments__send__form-group">
+                <label class="text-small" for="email">Введите почту*</label>
+                <input
+                  type="email"
+                  class="inputform"
+                  id="email"
+                  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                  name="email"
+                  required
+                  placeholder="E-mail"
+                />
+              </div>
+            </div>
+
+            <div class="comments__send__form-group">
+              <label class="text-small" for="comment-area">Ваш вопрос*</label>
+              <textarea
+                class="inputform"
+                id="comments"
+                name="comment-area"
+                type="text"
+                required
+                placeholder="Ваш вопрос"
+              ></textarea>
+            </div>
+
+            <button type="submit" class="blogbtnblue text-h3">
+              Отправить
+              <svg
+                width="26"
+                height="25"
+                viewBox="0 0 26 25"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M2.06072 0.31243C1.02893 -0.180428 -0.10464 0.76243 0.190003 1.86707L2.35 9.93814C2.40414 10.141 2.51667 10.3235 2.67363 10.4629C2.83058 10.6023 3.02505 10.6926 3.23286 10.7224L13.8229 12.2353C14.1293 12.2781 14.1293 12.7217 13.8229 12.7656L3.23393 14.2774C3.02612 14.3073 2.83166 14.3975 2.6747 14.537C2.51774 14.6764 2.40521 14.8589 2.35107 15.0617L0.190003 23.1371C-0.10464 24.2406 1.02893 25.1835 2.06072 24.6917L25.0943 13.7106C26.1111 13.2264 26.1111 11.7778 25.0943 11.2924L2.06072 0.31243Z"
+                  fill="white"
+                />
+              </svg>
+            </button>
+          </form>
         </div>
       </div>
     </section>
@@ -331,4 +423,8 @@
       </div>
     </footer>
   </body>
+
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=1&lang=ru_RU"></script>
+  <script src="./js/map.js"></script>
+  <script src="./js/scroll.js"></script>
 </html>

@@ -14,6 +14,7 @@
 @import "./similar-article.css";
 @import "./thanks.css";
 @import "./contacts.css";
+@import "./contact-map.css";
 @import "./footer.css";
 @import "./normalize.css";
 @import "../vendor/fonts.css";
@@ -65,6 +66,7 @@ button {
   --color-black1C: #1C1C1C;
   --color-black2C: #2C2C2C;
   --color-gray: #BEBEBE;
+  --color-grayF1: #F1F1F1;
   --color-grayF8: #F8F8F8;
   --color-grayAO: #A0A0A0;
   --color-grayF4: #F4F4F4;
@@ -254,8 +256,11 @@ textarea {
     line-height: 140%;
   }
 
+  .text20 {
+    font-size: 16px;
+  }
+
   .text {
-    font-family: "Roboto", "Arial", sans-serif;
     font-size: 16px;
   }
 
