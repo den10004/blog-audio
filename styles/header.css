@@ -145,6 +145,7 @@
 
     .header__logo_block {
         width: 100%;
+        align-items: center;
     }
 
     .header__block>nav>ul li:not(:last-child) {
