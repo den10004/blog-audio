@@ -13,6 +13,7 @@
 @import "./blog-comments.css";
 @import "./similar-article.css";
 @import "./thanks.css";
+@import "./contacts.css";
 @import "./footer.css";
 @import "./normalize.css";
 @import "../vendor/fonts.css";
@@ -72,9 +73,10 @@ button {
   --color-gray56: #565656;
   --color-white: #FFFFFF;
   --color-blue: #0055CC;
+  --color-blueEE: #2AABEE;
   --color-sky-blue: #A7CAFF;
   --color-green: #2CAE35;
-
+  --color-green66: #25D366;
 }
 
 .container {
@@ -113,12 +115,20 @@ button {
   line-height: 100%;
 }
 
+.text20 {
+  font-family: "Roboto", "Arial", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 114%;
+}
+
 .text {
   font-family: "Roboto", "Arial", sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 140%;
 }
+
 
 .text16 {
   font-family: "Roboto", "Arial", sans-serif;
@@ -210,10 +220,13 @@ textarea {
   background-color: transparent;
 }
 
-
-
 .style-color-arrow>path:hover {
   fill: #BEBEBE
+}
+
+.blockbg {
+  background: var(--color-grayFA);
+  border-radius: 20px;
 }
 
 
