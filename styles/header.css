@@ -159,6 +159,7 @@
     .header__block>nav>ul {
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
     }
 
     .header {

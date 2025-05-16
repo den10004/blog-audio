@@ -1,12 +1,17 @@
-const modal = document.getElementById("myModal");
+const headerModal = document.getElementById("myModal");
 const sortModal = document.getElementById("sortModal");
+const callback = document.getElementById("callback");
 
 function openHeaderMenu() {
-  modal.classList.add("active");
+  headerModal.classList.add("active");
 }
 
 function openSort() {
   sortModal.classList.add("active");
+}
+
+function openCallbackMenu() {
+  callback.classList.add("active");
 }
 
 function closeModal() {

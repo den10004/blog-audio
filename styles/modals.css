@@ -13,8 +13,6 @@
     overflow: auto
 }
 
-
-
 .modal-content {
     background-color: var(--color-grayF6);
     padding: 20px;
@@ -95,6 +93,26 @@
     align-items: center;
     color: var(--color-black1C);
     margin-top: auto;
+}
+
+.callbackform {
+    margin-top: 20px;
+}
+
+.callbackform>button {
+    width: 211px;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+    height: 71px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.callbackform>.comments__send__form-group:not(:last-child) {
+    margin-bottom: 23px;
 }
 
 /*чекбоксы*/
