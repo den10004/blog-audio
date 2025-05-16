@@ -107,6 +107,24 @@
     padding: 5px 0;
 }
 
+
+@media screen and (max-width: 500px) {
+    .search__form>button {
+        width: 90px;
+    }
+
+    .search__form>input {
+        width: calc(100% - 100px);
+    }
+}
+
+@media screen and (max-width: 340px) {
+    .alphabet-button {
+        width: 36px;
+        height: 43px;
+    }
+}
+
 /*********************************/
 
 
