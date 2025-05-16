@@ -76,11 +76,9 @@
 }
 
 .brand-list {
-    display: none;
     background-color: var(--color-grayFA);
     padding: 20px;
     border-radius: 20px;
-    max-height: 768px;
 }
 
 .brand-list.active {
@@ -107,4 +105,59 @@
 
 .brand-list li {
     padding: 5px 0;
+}
+
+/*********************************/
+
+
+#selectedLetter {
+    margin-bottom: 15px;
+}
+
+.multi-column-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.multi-column-list .column {
+    flex: 1;
+    min-width: 200px;
+    max-width: calc(33.33% - 20px);
+}
+
+.multi-column-list li {
+    margin-bottom: 8px;
+    list-style-type: none;
+}
+
+.load-more-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.pagination {
+    display: flex;
+    gap: 5px;
+}
+
+.page-number {
+    padding: 10px 12px;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: transparent;
+    font-family: "SFProText", "Arial", sans-serif;
+    font-size: 15px;
+    color: var(--color-black2C);
+}
+
+.page-number.active {
+    background: var(--color-grayF8);
+}
+
+.pagination button:last-child {
+    background: var(--color-grayF8);
 }

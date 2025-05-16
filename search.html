@@ -126,7 +126,11 @@
         </div>
         <div class="brand-list" id="brandList">
           <h2 id="selectedLetter"></h2>
-          <ul id="brandItems"></ul>
+          <ul id="brandItems" class="multi-column-list"></ul>
+        </div>
+        <div class="load-more-container" style="display: flex">
+          <button id="load-more" class="text showbtn">Показать ещё</button>
+          <div class="pagination" id="pagination"></div>
         </div>
       </div>
     </section>
@@ -231,7 +235,100 @@
   const englishAlphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
   const brands = {
-    А: ["Accuphase", "Acoustic Solid", "ADAM AUDIO"],
+    А: [
+      "Accuphase",
+      "Acoustic Solid",
+      "ADAM AUDIO",
+      "Accuphase",
+      "Acoustic Solid",
+      "ADAM AUDIO",
+      "Accuphase",
+      "Acoustic Solid",
+      "ADAM AUDIO",
+      "Accuphase",
+      "Acoustic Solid",
+      "ADAM AUDIO",
+      "Accuphase",
+      "Acoustic Solid",
+      "ADAM AUDIO",
+      "Accuphase",
+      "Acoustic Solid",
+      "ADAM AUDIO",
+      "Accuphase",
+      "Acoustic Solid",
+      "ADAM AUDIO",
+      "Accuphase",
+      "Acoustic Solid",
+      "ADAM AUDIO",
+      "Accuphase",
+      "Acoustic Solid",
+      "ADAM AUDIO",
+      "Accuphase",
+      "Acoustic Solid",
+      "ADAM AUDIO",
+      "Accuphase",
+      "Acoustic Solid",
+      "ADAM AUDIO",
+      "Accuphase",
+      "Acoustic Solid",
+      "ADAM AUDIO",
+      "Accuphase",
+      "Acoustic Solid",
+      "ADAM AUDIO",
+      "Accuphase",
+      "Acoustic Solid",
+      "ADAM AUDIO",
+      "Accuphase",
+      "Acoustic Solid",
+      "ADAM AUDIO",
+      "Accuphase",
+      "Acoustic Solid",
+      "ADAM AUDIO",
+      "Accuphase",
+      "Acoustic Solid",
+      "ADAM AUDIO",
+      "Accuphase",
+      "Acoustic Solid",
+      "ADAM AUDIO",
+      "Accuphase",
+      "Acoustic Solid",
+      "ADAM AUDIO",
+      "Accuphase",
+      "Acoustic Solid",
+      "ADAM AUDIO",
+      "Accuphase",
+      "Accuphase",
+      "ADAM AUDIO",
+      "Accuphase",
+      "Accuphase",
+      "ADAM AUDIO",
+      "Accuphase",
+      "Acoustic Solid",
+      "ADAM AUDIO",
+      "Accuphase",
+      "Acoustic Solid",
+      "ADAM AUDIO",
+      "Accuphase",
+      "Acoustic Solid",
+      "ADAM AUDIO",
+      "Accuphase",
+      "Acoustic Solid",
+      "ADAM AUDIO",
+      "Accuphase",
+      "Acoustic Solid",
+      "ADAM AUDIO",
+      "Accuphase",
+      "Acoustic Solid",
+      "ADAM AUDIO",
+      "Accuphase",
+      "Acoustic Solid",
+      "ADAM AUDIO",
+      "Accuphase",
+      "Accuphase",
+      "ADAM AUDIO",
+      "Accuphase",
+      "Accuphase",
+    ],
     Б: ["Accuphase", "Acoustic Solid"],
     В: ["Accuphase", "Acoustic Solid", "ADAM AUDIO"],
     Г: ["Accuphase", "Acoustic Solid"],
@@ -279,8 +376,15 @@
   const brandList = document.getElementById("brandList");
   const selectedLetter = document.getElementById("selectedLetter");
   const brandItems = document.getElementById("brandItems");
+  const loadMoreBtn = document.getElementById("load-more");
+  const paginationContainer = document.getElementById("pagination");
 
-  // Generate alphabet buttons only for letters with brands
+  // Pagination variables
+  const itemsPerPage = 30; // Количество элементов на странице
+  let currentLetter = "";
+  let currentPage = 1;
+  let allItems = [];
+
   function createAlphabetButtons() {
     const availableLetters = Object.keys(brands);
     const filteredRussianAlphabet = russianAlphabet.filter((letter) =>
@@ -294,52 +398,140 @@
       ...filteredEnglishAlphabet,
     ];
 
-    // Populate Russian buttons
     filteredRussianAlphabet.forEach((letter) => {
       const button = document.createElement("button");
       button.classList.add("alphabet-button");
       button.textContent = letter;
-      button.addEventListener("click", () => showBrands(letter));
+      button.addEventListener("click", () => {
+        currentPage = 1;
+        showBrands(letter);
+      });
       russianAlphabetContainer.appendChild(button);
     });
 
-    // Populate English buttons
     filteredEnglishAlphabet.forEach((letter) => {
       const button = document.createElement("button");
       button.classList.add("alphabet-button");
       button.textContent = letter;
-      button.addEventListener("click", () => showBrands(letter));
+      button.addEventListener("click", () => {
+        currentPage = 1;
+        showBrands(letter);
+      });
       englishAlphabetContainer.appendChild(button);
     });
 
-    // Activate the first letter's button and show its brands
     if (allFilteredLetters.length > 0) {
       showBrands(allFilteredLetters[0]);
     }
   }
 
-  // Show brands for the selected letter
   function showBrands(letter) {
-    // Update active button state
+    currentLetter = letter;
     document.querySelectorAll(".alphabet-button").forEach((btn) => {
       btn.classList.toggle("active", btn.textContent === letter);
     });
 
-    // Update brand list
     selectedLetter.textContent = `${letter}`;
     brandItems.innerHTML = "";
+    paginationContainer.innerHTML = "";
 
-    const brandListForLetter = brands[letter] || ["Нет брендов для этой буквы"];
-    brandListForLetter.forEach((brand) => {
-      const li = document.createElement("li");
-      li.textContent = brand;
-      brandItems.appendChild(li);
-    });
+    allItems = brands[letter] || ["Нет брендов для этой буквы"];
 
-    // Show the brand list
-    brandList.classList.add("active");
+    renderBrands();
+    updatePagination();
+    updateLoadMoreButton();
   }
 
-  // Initialize the page
+  function renderBrands() {
+    brandItems.innerHTML = "";
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = Math.min(startIndex + itemsPerPage, allItems.length);
+    const itemsToShow = allItems.slice(startIndex, endIndex);
+
+    // Determine number of columns needed (max 3)
+    const columnCount = Math.min(3, Math.ceil(itemsToShow.length / 10));
+
+    // Create columns
+    for (let i = 0; i < columnCount; i++) {
+      const column = document.createElement("div");
+      column.classList.add("column");
+      brandItems.appendChild(column);
+    }
+
+    // Distribute items across columns
+    const columns = brandItems.querySelectorAll(".column");
+    itemsToShow.forEach((brand, index) => {
+      const columnIndex = index % columnCount;
+      const li = document.createElement("li");
+      li.textContent = brand;
+      columns[columnIndex].appendChild(li);
+    });
+  }
+
+  function updatePagination() {
+    paginationContainer.innerHTML = "";
+    const pageCount = Math.ceil(allItems.length / itemsPerPage);
+
+    if (pageCount <= 1) return;
+
+    // Previous button
+    if (currentPage > 1) {
+      const prevButton = document.createElement("button");
+      prevButton.classList.add("page-number");
+      prevButton.textContent = "←";
+      prevButton.addEventListener("click", () => {
+        currentPage--;
+        renderBrands();
+        updatePagination();
+      });
+      paginationContainer.appendChild(prevButton);
+    }
+
+    // Page numbers
+    for (let i = 1; i <= pageCount; i++) {
+      const pageButton = document.createElement("button");
+      pageButton.classList.add("page-number");
+      if (i === currentPage) pageButton.classList.add("active");
+      pageButton.textContent = i;
+      pageButton.addEventListener("click", () => {
+        currentPage = i;
+        renderBrands();
+        updatePagination();
+      });
+      paginationContainer.appendChild(pageButton);
+    }
+
+    // Next button
+    if (currentPage < pageCount) {
+      const nextButton = document.createElement("button");
+      nextButton.classList.add("page-number");
+      nextButton.textContent = "→";
+      nextButton.addEventListener("click", () => {
+        currentPage++;
+        renderBrands();
+        updatePagination();
+      });
+      paginationContainer.appendChild(nextButton);
+    }
+  }
+
+  function updateLoadMoreButton() {
+    if (allItems.length <= itemsPerPage) {
+      loadMoreBtn.style.display = "none";
+    } else {
+      loadMoreBtn.style.display = "block";
+    }
+  }
+
+  loadMoreBtn.addEventListener("click", () => {
+    const remainingItems = allItems.length - currentPage * itemsPerPage;
+    if (remainingItems > 0) {
+      currentPage++;
+      renderBrands();
+      updatePagination();
+      updateLoadMoreButton();
+    }
+  });
+
   createAlphabetButtons();
 </script>
