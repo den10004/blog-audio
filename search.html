@@ -239,7 +239,7 @@
       "Accuphase",
       "Acoustic Solid",
       "ADAM AUDIO",
-      "Accuphase",
+      "ADAM AUDIO",
       "Acoustic Solid",
       "ADAM AUDIO",
       "Accuphase",
@@ -270,45 +270,18 @@
       "Acoustic Solid",
       "ADAM AUDIO",
       "Accuphase",
+      "Accuphase",
+      "ADAM AUDIO",
+      "Accuphase",
+      "Acoustic Solid",
+      "1ADAM AUDIO",
+      "ADAM AUDIO",
       "Acoustic Solid",
       "ADAM AUDIO",
       "Accuphase",
       "Acoustic Solid",
       "ADAM AUDIO",
-      "Accuphase",
-      "Acoustic Solid",
-      "ADAM AUDIO",
-      "Accuphase",
-      "Acoustic Solid",
-      "ADAM AUDIO",
-      "Accuphase",
-      "Acoustic Solid",
-      "ADAM AUDIO",
-      "Accuphase",
-      "Acoustic Solid",
-      "ADAM AUDIO",
-      "Accuphase",
-      "Acoustic Solid",
-      "ADAM AUDIO",
-      "Accuphase",
-      "Acoustic Solid",
-      "ADAM AUDIO",
-      "Accuphase",
-      "Acoustic Solid",
-      "ADAM AUDIO",
-      "Accuphase",
-      "Accuphase",
-      "ADAM AUDIO",
-      "Accuphase",
-      "Accuphase",
-      "ADAM AUDIO",
-      "Accuphase",
-      "Acoustic Solid",
-      "ADAM AUDIO",
-      "Accuphase",
-      "Acoustic Solid",
-      "ADAM AUDIO",
-      "Accuphase",
+      "1Acoustic Solid",
       "Acoustic Solid",
       "ADAM AUDIO",
       "Accuphase",
@@ -328,6 +301,33 @@
       "ADAM AUDIO",
       "Accuphase",
       "Accuphase",
+      "ADAM AUDIO",
+      "Accuphase",
+      "Acoustic Solid",
+      "ADAM AUDIO",
+      "Accuphase",
+      "Acoustic Solid",
+      "ADAM AUDIO",
+      "Accuphase",
+      "Acoustic Solid",
+      "ADAM AUDIO",
+      "Accup2hase",
+      "Acoustic Solid",
+      "ADAM AUDIO",
+      "Accuphase",
+      "Acoustic Solid",
+      "ADAM AUDIO",
+      "Accuphase",
+      "2Acoustic Solid",
+      "ADAM AUDIO",
+      "Accuphase",
+      "Acoustic Solid",
+      "ADAM AUDIO",
+      "Accuphase",
+      "2Accuphase",
+      "2ADAM AUDIO",
+      "2Accuphase",
+      "2Accuphase",
     ],
     Б: ["Accuphase", "Acoustic Solid"],
     В: ["Accuphase", "Acoustic Solid", "ADAM AUDIO"],
@@ -380,10 +380,12 @@
   const paginationContainer = document.getElementById("pagination");
 
   // Pagination variables
-  const itemsPerPage = 30; // Количество элементов на странице
+  const itemsPerPage = 60; // Количество элементов на странице
   let currentLetter = "";
   let currentPage = 1;
   let allItems = [];
+  let displayedItemsCount = 0;
+  let totalPages = 1;
 
   function createAlphabetButtons() {
     const availableLetters = Object.keys(brands);
@@ -404,6 +406,7 @@
       button.textContent = letter;
       button.addEventListener("click", () => {
         currentPage = 1;
+        displayedItemsCount = 0;
         showBrands(letter);
       });
       russianAlphabetContainer.appendChild(button);
@@ -415,6 +418,7 @@
       button.textContent = letter;
       button.addEventListener("click", () => {
         currentPage = 1;
+        displayedItemsCount = 0;
         showBrands(letter);
       });
       englishAlphabetContainer.appendChild(button);
@@ -436,43 +440,68 @@
     paginationContainer.innerHTML = "";
 
     allItems = brands[letter] || ["Нет брендов для этой буквы"];
+    displayedItemsCount = 0;
+    totalPages = Math.ceil(allItems.length / itemsPerPage);
 
-    renderBrands();
+    loadMoreBrands();
     updatePagination();
     updateLoadMoreButton();
   }
 
-  function renderBrands() {
-    brandItems.innerHTML = "";
-    const startIndex = (currentPage - 1) * itemsPerPage;
-    const endIndex = Math.min(startIndex + itemsPerPage, allItems.length);
+  function loadMoreBrands() {
+    const startIndex = displayedItemsCount;
+    const endIndex = Math.min(
+      displayedItemsCount + itemsPerPage,
+      allItems.length
+    );
     const itemsToShow = allItems.slice(startIndex, endIndex);
 
-    // Determine number of columns needed (max 3)
-    const columnCount = Math.min(3, Math.ceil(itemsToShow.length / 10));
+    if (itemsToShow.length === 0) return;
 
-    // Create columns
-    for (let i = 0; i < columnCount; i++) {
-      const column = document.createElement("div");
-      column.classList.add("column");
-      brandItems.appendChild(column);
+    const getColumnCount = () => {
+      const screenWidth = window.innerWidth;
+
+      if (screenWidth < 460) {
+        return 1;
+      } else if (screenWidth < 650) {
+        return 2;
+      } else {
+        return 3;
+      }
+    };
+
+    let columnCount = getColumnCount();
+    columnCount = Math.min(columnCount, Math.ceil(itemsToShow.length / 10));
+
+    // Если колонок еще нет - создаем их
+    if (brandItems.querySelectorAll(".column").length === 0) {
+      for (let i = 0; i < columnCount; i++) {
+        const column = document.createElement("div");
+        column.classList.add("column");
+        brandItems.appendChild(column);
+      }
     }
 
-    // Distribute items across columns
+    // Получаем существующие колонки
     const columns = brandItems.querySelectorAll(".column");
+
+    // Распределяем новые элементы по колонкам
     itemsToShow.forEach((brand, index) => {
-      const columnIndex = index % columnCount;
+      const columnIndex = (displayedItemsCount + index) % columnCount;
       const li = document.createElement("li");
       li.textContent = brand;
       columns[columnIndex].appendChild(li);
     });
+
+    displayedItemsCount += itemsToShow.length;
+    currentPage = Math.ceil(displayedItemsCount / itemsPerPage);
   }
 
   function updatePagination() {
     paginationContainer.innerHTML = "";
-    const pageCount = Math.ceil(allItems.length / itemsPerPage);
+    totalPages = Math.ceil(allItems.length / itemsPerPage);
 
-    if (pageCount <= 1) return;
+    if (totalPages <= 1) return;
 
     // Previous button
     if (currentPage > 1) {
@@ -481,42 +510,51 @@
       prevButton.textContent = "←";
       prevButton.addEventListener("click", () => {
         currentPage--;
-        renderBrands();
+        brandItems.innerHTML = "";
+        displayedItemsCount = (currentPage - 1) * itemsPerPage;
+        loadMoreBrands();
         updatePagination();
+        updateLoadMoreButton();
       });
       paginationContainer.appendChild(prevButton);
     }
 
     // Page numbers
-    for (let i = 1; i <= pageCount; i++) {
+    for (let i = 1; i <= totalPages; i++) {
       const pageButton = document.createElement("button");
       pageButton.classList.add("page-number");
       if (i === currentPage) pageButton.classList.add("active");
       pageButton.textContent = i;
       pageButton.addEventListener("click", () => {
-        currentPage = i;
-        renderBrands();
-        updatePagination();
+        if (i !== currentPage) {
+          currentPage = i;
+          brandItems.innerHTML = "";
+          displayedItemsCount = (currentPage - 1) * itemsPerPage;
+          loadMoreBrands();
+          updatePagination();
+          updateLoadMoreButton();
+        }
       });
       paginationContainer.appendChild(pageButton);
     }
 
     // Next button
-    if (currentPage < pageCount) {
+    if (currentPage < totalPages) {
       const nextButton = document.createElement("button");
       nextButton.classList.add("page-number");
       nextButton.textContent = "→";
       nextButton.addEventListener("click", () => {
         currentPage++;
-        renderBrands();
+        loadMoreBrands();
         updatePagination();
+        updateLoadMoreButton();
       });
       paginationContainer.appendChild(nextButton);
     }
   }
 
   function updateLoadMoreButton() {
-    if (allItems.length <= itemsPerPage) {
+    if (displayedItemsCount >= allItems.length) {
       loadMoreBtn.style.display = "none";
     } else {
       loadMoreBtn.style.display = "block";
@@ -524,12 +562,19 @@
   }
 
   loadMoreBtn.addEventListener("click", () => {
-    const remainingItems = allItems.length - currentPage * itemsPerPage;
-    if (remainingItems > 0) {
-      currentPage++;
-      renderBrands();
-      updatePagination();
-      updateLoadMoreButton();
+    loadMoreBrands();
+    updatePagination();
+    updateLoadMoreButton();
+  });
+
+  // Обработчик изменения размера окна для адаптации колонок
+  window.addEventListener("resize", () => {
+    if (currentLetter) {
+      const tempItems = allItems.slice(0, displayedItemsCount);
+      brandItems.innerHTML = "";
+      displayedItemsCount = 0;
+      allItems = tempItems;
+      loadMoreBrands();
     }
   });
 

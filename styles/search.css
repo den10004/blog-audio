@@ -117,13 +117,13 @@
 .multi-column-list {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     gap: 20px;
 }
 
 .multi-column-list .column {
     flex: 1;
-    min-width: 200px;
-    max-width: calc(33.33% - 20px);
+    max-width: 226px;
 }
 
 .multi-column-list li {
@@ -131,15 +131,25 @@
     list-style-type: none;
 }
 
+.column {
+    transition: all 0.3s ease;
+}
+
+
 .load-more-container {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 20px;
+    position: relative;
+    height: 85px;
 }
 
 .pagination {
     display: flex;
+    position: absolute;
+    top: 25px;
+    right: 0;
     gap: 5px;
 }
 
@@ -151,13 +161,39 @@
     background: transparent;
     font-family: "SFProText", "Arial", sans-serif;
     font-size: 15px;
-    color: var(--color-black2C);
+    color: var(--color-gray);
 }
 
 .page-number.active {
     background: var(--color-grayF8);
+    color: var(--color-black1);
 }
 
 .pagination button:last-child {
     background: var(--color-grayF8);
+}
+
+.column {
+    flex: 1;
+}
+
+@media screen and (max-width: 900px) {
+    .breadcrumbs-container {
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .brand-list ul {
+        margin-left: 20px;
+    }
+
+    .pagination {
+        position: relative;
+        top: 0px;
+    }
+
+    .load-more-container {
+        flex-direction: column;
+    }
 }
