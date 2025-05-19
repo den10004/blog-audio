@@ -473,7 +473,7 @@
 
         <div class="brands__block" style="position: relative">
           <div class="brand-btn-block">
-            <div class="brand-button-next">
+            <button class="brand-button-next" aria-label="Предыдущий слайд">
               <svg
                 width="15"
                 height="10"
@@ -487,8 +487,8 @@
                   fill="#0055CC"
                 />
               </svg>
-            </div>
-            <div class="brand-button-prev">
+            </button>
+            <button class="brand-button-prev" aria-label="Следующий слайд">
               <svg
                 width="15"
                 height="10"
@@ -502,7 +502,7 @@
                   fill="#0055CC"
                 />
               </svg>
-            </div>
+            </button>
           </div>
           <div class="swiper brandSlider">
             <div class="swiper-wrapper" id="brands-container">
@@ -1284,6 +1284,21 @@
       slide.innerHTML = `<img src="${brand.src}" alt="${brand.alt}" />`;
       brandsContainer.appendChild(slide);
     });
+
+    document
+      .querySelectorAll(".brand-button-next, .brand-button-prev")
+      .forEach((button) => {
+        button.addEventListener("mousedown", () => {
+          setTimeout(() => {
+            if (
+              document.activeElement &&
+              document.activeElement !== document.body
+            ) {
+              document.activeElement.blur();
+            }
+          }, 0);
+        });
+      });
 
     // Инициализация Swiper
     var swiper = new Swiper(".brandSlider", {
