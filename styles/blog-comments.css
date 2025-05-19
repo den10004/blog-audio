@@ -87,6 +87,12 @@
     margin-top: 24px;
 }
 
+.comments__send__form>button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 
 .comments__send>form>div:first-child {
     margin-bottom: 23px;
@@ -106,24 +112,5 @@
 
 
 .comments__send>form>button {
-    width: 211px;
-    padding-left: 20px;
-    padding-right: 20px;
-    box-sizing: border-box;
-    height: 71px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     margin-top: 10px;
-}
-
-@media screen and (max-width: 768px) {
-    .comments__send>form>button {
-        height: 45px;
-        font-size: 20px !important;
-    }
-
-    .send-img {
-        width: 20px;
-    }
 }

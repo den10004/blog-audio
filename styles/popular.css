@@ -35,6 +35,9 @@
 
 .popular__sort>li>a>img {
     margin-right: 5px;
+    border-radius: 50% 0% 0% 50%;
+    width: 28px;
+    height: 32px;
 }
 
 
@@ -102,7 +105,7 @@
 
 @media screen and (max-width: 767px) {
     .popular__sort.collapsed {
-        max-height: calc(2 * (1em + 16px + 2px * 2));
+        max-height: calc(2 * (1em + 16px + 13px * 2));
         overflow: hidden;
     }
 

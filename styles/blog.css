@@ -132,7 +132,7 @@
 
 .order {
     width: calc(100% - 244px);
-    margin-left: 10px;
+    margin-left: 0px;
 }
 
 .blog__share {
@@ -210,7 +210,11 @@
     color: var(--color-black2C);
 }
 
-
+@media screen and (max-width: 1124px) {
+    .application__sendform>button {
+        font-size: 19px;
+    }
+}
 
 @media screen and (max-width: 1024px) {
     .application__form {
@@ -281,11 +285,6 @@
 
     .consultation {
         width: 48%;
-    }
-
-    .order {
-        width: 48%;
-        margin-left: 0px;
     }
 }
 

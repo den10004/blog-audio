@@ -108,6 +108,12 @@
 }
 
 
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
 @media screen and (max-width: 500px) {
     .search__form>button {
         width: 90px;
@@ -135,13 +141,11 @@
 .multi-column-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
     gap: 20px;
 }
 
 .multi-column-list .column {
     flex: 1;
-    max-width: 226px;
 }
 
 .multi-column-list li {
@@ -191,9 +195,6 @@
     background: var(--color-grayF8);
 }
 
-.column {
-    flex: 1;
-}
 
 @media screen and (max-width: 900px) {
     .breadcrumbs-container {
@@ -203,7 +204,7 @@
 
 @media screen and (max-width: 768px) {
     .brand-list ul {
-        margin-left: 20px;
+        margin-left: 0px;
     }
 
     .pagination {
