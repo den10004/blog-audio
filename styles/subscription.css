@@ -13,7 +13,7 @@
     background-color: var(--color-grayF5);
     padding: 22px 21px 17px 17px;
     border-radius: 20px;
-    width: calc(100% - 74px);
+    width: 100%
 }
 
 .subscription__block>form {
@@ -67,6 +67,7 @@
 
 
 #scrollToTopBtn {
+    position: fixed;
     border: none;
     outline: none;
     background-color: var(--color-grayF5);
@@ -78,6 +79,8 @@
     align-items: center;
     justify-content: center;
     margin-left: 10px;
+    bottom: 60px;
+    right: 20px;
 
 }
 
@@ -94,7 +97,7 @@
 
 
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1100px) {
     .subscription__block {
         flex-direction: column;
         align-items: flex-start;
@@ -116,15 +119,15 @@
     .subscription__block>form {
         margin: 0;
     }
+
+    .subscription__block>div {
+        max-width: 100%;
+    }
 }
 
 @media screen and (max-width: 767px) {
     #scrollToTopBtn {
         display: none;
-    }
-
-    .subscription__block {
-        width: 100%;
     }
 }
 

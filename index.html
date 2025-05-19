@@ -108,7 +108,7 @@
         <section class="hero__background">
           <h1>
             Блог о домашних <br />
-            кинотеатрах и Hi-End звуке
+            кинотеатрах и Hi-End аудио
           </h1>
           <p class="text-h3">Обзоры, идеи и секреты идеального просмотра</p>
         </section>
@@ -277,24 +277,9 @@
       </button>
     </section>
 
-    <section style="margin-top: 20px">
-      <div class="container text">
-        Этот удобный динамический микрофон обладает теплотой и четкостью,
-        идеально подходящими для живых выступлений. E 845-S минимизирует звуки
-        по бокам от капсюля и сводит обратную связь к минимуму, что очень
-        полезно на громкой сцене. Модель рассчитана на использование в сложных
-        условия концерта. Вокалист может запросто снять её со стойки и побежать
-        в другой край сцены без риска, что голос затеряется в окружающем рокоте
-        гитарных усилителей и барабанов. Однако в версии S пользователю нужно
-        быть чуть внимательнее, чтобы случайно его не выключить. Этот удобный
-        динамический микрофон обладает теплотой и четкостью, идеально
-        подходящими для живых выступлений.
-      </div>
-    </section>
-
     <section class="interes">
       <div class="container">
-        <h3 class="text-h3-bold">Интересные статьи</h3>
+        <h3 class="text-h3-bold">Популярные статьи</h3>
 
         <div class="interes__card">
           <div class="card">
@@ -557,8 +542,7 @@
       <div class="container">
         <div class="subscription__block">
           <h3 class="text-h3-bold">
-            Подпишитесь на рассылку <br />
-            и получите скидку
+            Подпишитесь на рассылку и узнавайте о скидках и акциях первым
           </h3>
           <form>
             <input
@@ -598,32 +582,35 @@
             </span>
           </div>
         </div>
-        <button id="scrollToTopBtn">
-          <svg
-            width="22"
-            height="22"
-            viewBox="0 0 22 22"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M11 21.001L11 2.48245"
-              stroke="#0055CC"
-              class="change-color-on-hover"
-              stroke-width="2"
-              stroke-linecap="round"
-            />
-            <path
-              d="M21 10.6304L11.2775 1.26792C11.1226 1.11875 10.8774 1.11876 10.7225 1.26792L1 10.6304"
-              stroke="#0055CC"
-              class="change-color-on-hover"
-              stroke-width="2"
-              stroke-linecap="round"
-            />
-          </svg>
-        </button>
       </div>
     </section>
+
+    <div class="container">
+      <button id="scrollToTopBtn">
+        <svg
+          width="22"
+          height="22"
+          viewBox="0 0 22 22"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M11 21.001L11 2.48245"
+            stroke="#0055CC"
+            class="change-color-on-hover"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+          <path
+            d="M21 10.6304L11.2775 1.26792C11.1226 1.11875 10.8774 1.11876 10.7225 1.26792L1 10.6304"
+            stroke="#0055CC"
+            class="change-color-on-hover"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+        </svg>
+      </button>
+    </div>
 
     <footer>
       <div class="footer-container">
@@ -798,7 +785,7 @@
     </div>
 
     <div id="callback" class="modal">
-      <div class="modal-content">
+      <div class="modal-content modal-position">
         <span class="close-btn" onclick="closeModal()">×</span>
         <h3 class="text-h3-bold">Остались вопросы?</h3>
         <form class="callbackform" action="/sendform" method="POST">

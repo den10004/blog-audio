@@ -20,9 +20,8 @@
 }
 
 .card__container-wide>div>img {
-    height: auto;
     border-radius: 20px;
-    aspect-ratio: 568/371;
+    aspect-ratio: 16/9;
 }
 
 .container__wide-text {
@@ -69,7 +68,7 @@
     width: 100%;
     height: auto;
     border-radius: 20px;
-    aspect-ratio: 344/295;
+    aspect-ratio: 16/9;
     border-radius: 20px;
 }
 

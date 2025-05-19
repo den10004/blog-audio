@@ -64,15 +64,21 @@
 }
 
 @media screen and (max-width: 767px) {
-    .thanks__img>img {
-        display: none;
+    .thanks__wrap {
+        flex-direction: column;
     }
 
     .thanks__info {
         margin: 0 auto;
     }
 
+    .thanks__img>img {
+        margin-top: 30px;
+    }
+
     .thanks__wrap>div {
         text-align: center;
+        margin: 0 auto;
+        height: auto;
     }
 }

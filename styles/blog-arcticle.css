@@ -99,7 +99,7 @@
     }
 
     .article__img>img {
-        width: 312px;
+        max-width: 312px;
     }
 
     .article__desc>h2 {

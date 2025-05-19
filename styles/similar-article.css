@@ -10,8 +10,7 @@
 
     .similarArticle__img>img {
         width: 100%;
-        aspect-ratio: 47/23;
-        height: auto;
+        aspect-ratio: 16/9;
     }
 
     .similarArticle>h3 {
