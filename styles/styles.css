@@ -167,11 +167,6 @@ button {
   cursor: pointer;
 }
 
-#showbtn:focus:not(:focus-visible) {
-  outline: none;
-  box-shadow: none;
-}
-
 .blogbtnblue {
   background-color: var(--color-blue);
   color: var(--color-white);
