@@ -169,6 +169,20 @@
 
 .application__form>div>img {
     margin-top: 7px;
+    max-width: 265px;
+    height: auto;
+    border-radius: 20px;
+}
+
+.form__expert {
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    backdrop-filter: blur(6px);
+    color: var(--color-white);
+    background: #aca0a04d;
 }
 
 .application__sendform {
@@ -297,5 +311,11 @@
     .order {
         width: 100%;
         margin-top: 10px;
+    }
+}
+
+@media screen and (max-width:375px) {
+    .application__form>div>img {
+        max-width: 250px;
     }
 }

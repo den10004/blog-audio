@@ -97,6 +97,11 @@ footer {
     margin-right: 5px;
 }
 
+.footer__icons>li>a>svg {
+    width: 25px;
+    height: 25px;
+}
+
 
 .footer__switch {
     display: flex;
