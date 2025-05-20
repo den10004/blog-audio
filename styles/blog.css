@@ -183,6 +183,7 @@
     backdrop-filter: blur(6px);
     color: var(--color-white);
     background: #aca0a04d;
+    border-radius: 0 0 20px 20px;
 }
 
 .application__sendform {
@@ -313,10 +314,11 @@
         width: 100%;
         margin-top: 10px;
     }
-}
 
-@media screen and (max-width:375px) {
     .application__form>div>img {
-        max-width: 250px;
+        width: 100%;
+        max-width: 100%;
+
     }
+
 }
