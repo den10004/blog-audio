@@ -169,16 +169,6 @@ button {
   box-sizing: border-box;
 }
 
-.showbtn {
-  margin: 20px auto;
-  padding: 10px 20px;
-  background: var(--color-grayF8);
-  color: var(--color-black1C);
-  border-radius: 50px;
-  border: none;
-  cursor: pointer;
-}
-
 .blogbtnblue {
   background-color: var(--color-blue);
   color: var(--color-white);
